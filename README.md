@@ -1,9 +1,9 @@
 # Inisev Pub/Sub
 
-<!-- [![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/inisev/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/inisev/)
+<!-- [![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/inisev/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/inisev/) -->
 [![Code Quality](https://img.shields.io/codefactor/grade/github/ikechukwukalu/inisev?style=flat-square)](https://www.codefactor.io/repository/github/ikechukwukalu/inisev)
+[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/inisev/inisev.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/inisev/actions/workflows/inisev.yml)
 [![Vulnerability](https://img.shields.io/snyk/vulnerabilities/github/ikechukwukalu/inisev?style=flat-square)](https://snyk.io/test/github/ikechukwukalu/inisev)
-[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/inisev/inisev.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/inisev/actions/workflows/inisev.yml) -->
 
 This is a sample REST API that returns JSON as a response.
 
