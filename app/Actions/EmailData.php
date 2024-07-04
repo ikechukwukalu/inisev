@@ -2,9 +2,6 @@
 
 namespace App\Actions;
 
-use Ikechukwukalu\Clamavfileupload\Models\FileUpload;
-use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-
 class EmailData
 {
 
