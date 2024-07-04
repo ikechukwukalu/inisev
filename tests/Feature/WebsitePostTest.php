@@ -4,11 +4,12 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use App\Models\Website;
+use App\Models\WebsitePost;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class WebsiteTest extends TestCase
+class WebsitePostTest extends TestCase
 {
     use WithFaker;
 
@@ -17,7 +18,7 @@ class WebsiteTest extends TestCase
      *
      * @return void
      */
-    public function testErrorValidationForCreateWebsite()
+    public function testErrorValidationForCreateWebsitePost()
     {
         $user = User::factory()->create();
 
@@ -27,51 +28,13 @@ class WebsiteTest extends TestCase
             'name' => null,
         ];
 
-        $response = $this->postJson(route('createWebsite'), $postData);
+        $response = $this->postJson(route('createWebsitePost'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testCreateWebsite()
-    {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
-
-        $postData = [
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '1'
-        ];
-
-        $response = $this->postJson(route('createWebsite'), $postData);
-        $responseArray = $response->json();
-
-        $response->assertOk();
-        $this->assertTrue($responseArray['success']);
-    }
-
-    public function testErrorValidationForUpdateWebsite()
-    {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
-
-        $postData = [
-            'id' => 'abc',
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '1'
-        ];
-
-        $response = $this->putJson(route('updateWebsite'), $postData);
-        $responseArray = $response->json();
-
-        $this->assertFalse($responseArray['success']);
-    }
-
-    public function testUpdateWebsite()
+    public function testCreateWebsitePost()
     {
         $user = User::factory()->create();
 
@@ -80,20 +43,64 @@ class WebsiteTest extends TestCase
         $website = Website::factory()->create();
 
         $postData = [
-            'id' => $website->id,
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '0'
+            'website_id' => $website->id,
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(),
+            'active' => '1'
         ];
 
-        $response = $this->putJson(route('updateWebsite'), $postData);
+        $response = $this->postJson(route('createWebsitePost'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testErrorValidationForDeleteWebsite()
+    public function testErrorValidationForUpdateWebsitePost()
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
+        $postData = [
+            'id' => 'abc',
+            'name' => $this->faker->name(),
+        ];
+
+        $response = $this->putJson(route('updateWebsitePost'), $postData);
+        $responseArray = $response->json();
+
+        $this->assertFalse($responseArray['success']);
+    }
+
+    public function testUpdateWebsitePost()
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
+        $website = Website::factory()->create();
+
+        $websitePost = WebsitePost::factory()->create([
+            'website_id' => $website->id,
+            'active' => '0'
+        ]);
+
+        $postData = [
+            'id' => $websitePost->id,
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(),
+            'active' => '1'
+        ];
+
+        $response = $this->putJson(route('updateWebsitePost'), $postData);
+        $responseArray = $response->json();
+
+        $response->assertOk();
+        $this->assertTrue($responseArray['success']);
+    }
+
+    public function testErrorValidationForDeleteWebsitePost()
     {
         $user = User::factory()->create();
 
@@ -103,13 +110,13 @@ class WebsiteTest extends TestCase
             'id' => 'abc'
         ];
 
-        $response = $this->deleteJson(route('deleteWebsite'), $postData);
+        $response = $this->deleteJson(route('deleteWebsitePost'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testDeleteWebsite()
+    public function testDeleteWebsitePost()
     {
         $user = User::factory()->create();
 
@@ -117,18 +124,22 @@ class WebsiteTest extends TestCase
 
         $website = Website::factory()->create();
 
+        $websitePost = WebsitePost::factory()->create([
+            'website_id' => $website->id,
+        ]);
+
         $postData = [
-            'id' => $website->id
+            'id' => $websitePost->id
         ];
 
-        $response = $this->deleteJson(route('deleteWebsite'), $postData);
+        $response = $this->deleteJson(route('deleteWebsitePost'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testReadWebsite(): void
+    public function testReadWebsitePost(): void
     {
         $user = User::factory()->create();
 
@@ -136,19 +147,23 @@ class WebsiteTest extends TestCase
 
         $website = Website::factory()->create();
 
-        $response = $this->getJson(route('readWebsite', ['id' => 'all']));
+        $websitePost = WebsitePost::factory()->create([
+            'website_id' => $website->id,
+        ]);
+
+        $response = $this->getJson(route('readWebsitePost', ['id' => 'all']));
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
 
-        $response = $this->getJson(route('readWebsite', ['id' => $website->id]));
+        $response = $this->getJson(route('readWebsitePost', ['id' => $websitePost->id]));
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
 
-        $response = $this->getJson(route('readWebsite'));
+        $response = $this->getJson(route('readWebsitePost'));
         $responseArray = $response->json();
 
         $response->assertOk();

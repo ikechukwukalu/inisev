@@ -67,3 +67,36 @@ Route::prefix('website')->group(function () {
     Route::put('update', [WebsiteController::class, 'update'])->name('updateWebsite');
 
 });
+
+use App\Http\Controllers\WebsitePostController;
+
+Route::prefix('website_post')->group(function () {
+
+    Route::post('create', [WebsitePostController::class, 'create'])->name('createWebsitePost');
+    Route::delete('delete', [WebsitePostController::class, 'delete'])->name('deleteWebsitePost');
+    Route::get('read/{id?}', [WebsitePostController::class, 'read'])->name('readWebsitePost');
+    Route::put('update', [WebsitePostController::class, 'update'])->name('updateWebsitePost');
+
+});
+
+use App\Http\Controllers\UserPubController;
+
+Route::prefix('user_pub')->group(function () {
+
+    Route::post('create', [UserPubController::class, 'create'])->name('createUserPub');
+    Route::delete('delete', [UserPubController::class, 'delete'])->name('deleteUserPub');
+    Route::get('read/{id?}', [UserPubController::class, 'read'])->name('readUserPub');
+    Route::put('update', [UserPubController::class, 'update'])->name('updateUserPub');
+
+});
+
+use App\Http\Controllers\UserSubNotificationController;
+
+Route::prefix('user_sub_notification')->group(function () {
+
+    Route::post('create', [UserSubNotificationController::class, 'create'])->name('createUserSubNotification');
+    Route::delete('delete', [UserSubNotificationController::class, 'delete'])->name('deleteUserSubNotification');
+    Route::get('read/{id?}', [UserSubNotificationController::class, 'read'])->name('readUserSubNotification');
+    Route::put('update', [UserSubNotificationController::class, 'update'])->name('updateUserSubNotification');
+
+});

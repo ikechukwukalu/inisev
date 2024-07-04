@@ -3,12 +3,13 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use App\Models\UserPub;
 use App\Models\Website;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class WebsiteTest extends TestCase
+class UserPubTest extends TestCase
 {
     use WithFaker;
 
@@ -17,7 +18,7 @@ class WebsiteTest extends TestCase
      *
      * @return void
      */
-    public function testErrorValidationForCreateWebsite()
+    public function testErrorValidationForCreateUserPub()
     {
         $user = User::factory()->create();
 
@@ -27,51 +28,13 @@ class WebsiteTest extends TestCase
             'name' => null,
         ];
 
-        $response = $this->postJson(route('createWebsite'), $postData);
+        $response = $this->postJson(route('createUserPub'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testCreateWebsite()
-    {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
-
-        $postData = [
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '1'
-        ];
-
-        $response = $this->postJson(route('createWebsite'), $postData);
-        $responseArray = $response->json();
-
-        $response->assertOk();
-        $this->assertTrue($responseArray['success']);
-    }
-
-    public function testErrorValidationForUpdateWebsite()
-    {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
-
-        $postData = [
-            'id' => 'abc',
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '1'
-        ];
-
-        $response = $this->putJson(route('updateWebsite'), $postData);
-        $responseArray = $response->json();
-
-        $this->assertFalse($responseArray['success']);
-    }
-
-    public function testUpdateWebsite()
+    public function testCreateUserPub()
     {
         $user = User::factory()->create();
 
@@ -80,20 +43,66 @@ class WebsiteTest extends TestCase
         $website = Website::factory()->create();
 
         $postData = [
-            'id' => $website->id,
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '0'
+            'user_id' => $user->id,
+            'website_id' => $website->id,
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(),
+            'active' => '1'
         ];
 
-        $response = $this->putJson(route('updateWebsite'), $postData);
+        $response = $this->postJson(route('createUserPub'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testErrorValidationForDeleteWebsite()
+    public function testErrorValidationForUpdateUserPub()
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
+        $postData = [
+            'id' => 'abc',
+            'name' => $this->faker->name(),
+        ];
+
+        $response = $this->putJson(route('updateUserPub'), $postData);
+        $responseArray = $response->json();
+
+        $this->assertFalse($responseArray['success']);
+    }
+
+    public function testUpdateUserPub()
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
+
+        $website = Website::factory()->create();
+
+        $userPub = UserPub::factory()->create([
+            'user_id' => $user->id,
+            'website_id' => $website->id,
+            'active' => '0'
+        ]);
+
+        $postData = [
+            'id' => $userPub->id,
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->sentence(),
+            'active' => '1'
+        ];
+
+        $response = $this->putJson(route('updateUserPub'), $postData);
+        $responseArray = $response->json();
+
+        $response->assertOk();
+        $this->assertTrue($responseArray['success']);
+    }
+
+    public function testErrorValidationForDeleteUserPub()
     {
         $user = User::factory()->create();
 
@@ -103,13 +112,13 @@ class WebsiteTest extends TestCase
             'id' => 'abc'
         ];
 
-        $response = $this->deleteJson(route('deleteWebsite'), $postData);
+        $response = $this->deleteJson(route('deleteUserPub'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testDeleteWebsite()
+    public function testDeleteUserPub()
     {
         $user = User::factory()->create();
 
@@ -117,18 +126,24 @@ class WebsiteTest extends TestCase
 
         $website = Website::factory()->create();
 
+        $userPub = UserPub::factory()->create([
+            'user_id' => $user->id,
+            'website_id' => $website->id,
+            'active' => '0'
+        ]);
+
         $postData = [
-            'id' => $website->id
+            'id' => $userPub->id
         ];
 
-        $response = $this->deleteJson(route('deleteWebsite'), $postData);
+        $response = $this->deleteJson(route('deleteUserPub'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testReadWebsite(): void
+    public function testReadUserPub(): void
     {
         $user = User::factory()->create();
 
@@ -136,19 +151,25 @@ class WebsiteTest extends TestCase
 
         $website = Website::factory()->create();
 
-        $response = $this->getJson(route('readWebsite', ['id' => 'all']));
+        $userPub = UserPub::factory()->create([
+            'user_id' => $user->id,
+            'website_id' => $website->id,
+            'active' => '0'
+        ]);
+
+        $response = $this->getJson(route('readUserPub', ['id' => 'all']));
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
 
-        $response = $this->getJson(route('readWebsite', ['id' => $website->id]));
+        $response = $this->getJson(route('readUserPub', ['id' => $userPub->id]));
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
 
-        $response = $this->getJson(route('readWebsite'));
+        $response = $this->getJson(route('readUserPub'));
         $responseArray = $response->json();
 
         $response->assertOk();

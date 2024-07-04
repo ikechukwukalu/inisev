@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Website>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserSubNotification>
  */
-class WebsiteFactory extends Factory
+class UserSubNotificationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,7 @@ class WebsiteFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->name(),
-            'url' => fake()->url(),
+            'name' => fake()->name(),
             'active' => '1',
         ];
     }

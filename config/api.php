@@ -8,10 +8,16 @@ return [
         'user_device_token' => [
             'pageSize' => 10,
         ],
-        'website' => [
+        'user_pub' => [
             'pageSize' => 10,
         ],
         'user_sub' => [
+            'pageSize' => 10,
+        ],
+        'website' => [
+            'pageSize' => 10,
+        ],
+        'website_post' => [
             'pageSize' => 10,
         ],
     ],

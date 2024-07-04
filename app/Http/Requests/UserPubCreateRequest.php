@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class WebsiteCreateRequest extends BaseFormRequest
+class UserPubCreateRequest extends BaseFormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,8 +20,10 @@ class WebsiteCreateRequest extends BaseFormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|unique:websites,name|max:150',
-            'url' => 'required|url',
+            'user_id' => 'sometimes|exists:users,id,deleted_at,NULL',
+            'website_id' => 'required|exists:websites,id,deleted_at,NULL',
+            'title' => 'required|string|max:150',
+            'description' => 'required|string|max:2000',
             'active' => 'sometimes|in:0,1'
         ];
     }

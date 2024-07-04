@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_subs', function (Blueprint $table) {
+        Schema::create('website_posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('website_id')->constrained('websites')->onDelete('cascade');
+            $table->string('title');
+            $table->longText('description');
             $table->enum('active', ['0', '1'])->default(1);
             $table->softDeletes();
             $table->timestamps();
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_subs');
+        Schema::dropIfExists('website_posts');
     }
 };

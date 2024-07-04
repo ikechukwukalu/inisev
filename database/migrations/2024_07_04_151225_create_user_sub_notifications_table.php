@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_subs', function (Blueprint $table) {
+        Schema::create('user_sub_notifications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('website_id')->constrained('websites')->onDelete('cascade');
-            $table->enum('active', ['0', '1'])->default(1);
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_subs');
+        Schema::dropIfExists('user_sub_notifications');
     }
 };

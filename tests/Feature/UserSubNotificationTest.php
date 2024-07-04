@@ -3,12 +3,12 @@
 namespace Tests\Feature;
 
 use App\Models\User;
-use App\Models\Website;
+use App\Models\UserSubNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class WebsiteTest extends TestCase
+class UserSubNotificationTest extends TestCase
 {
     use WithFaker;
 
@@ -17,7 +17,7 @@ class WebsiteTest extends TestCase
      *
      * @return void
      */
-    public function testErrorValidationForCreateWebsite()
+    public function testErrorValidationForCreateUserSubNotification()
     {
         $user = User::factory()->create();
 
@@ -27,32 +27,30 @@ class WebsiteTest extends TestCase
             'name' => null,
         ];
 
-        $response = $this->postJson(route('createWebsite'), $postData);
+        $response = $this->postJson(route('createUserSubNotification'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testCreateWebsite()
+    public function testCreateUserSubNotification()
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
         $postData = [
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '1'
+            'name' => $this->faker->name(),
         ];
 
-        $response = $this->postJson(route('createWebsite'), $postData);
+        $response = $this->postJson(route('createUserSubNotification'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testErrorValidationForUpdateWebsite()
+    public function testErrorValidationForUpdateUserSubNotification()
     {
         $user = User::factory()->create();
 
@@ -60,40 +58,36 @@ class WebsiteTest extends TestCase
 
         $postData = [
             'id' => 'abc',
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '1'
+            'name' => $this->faker->name(),
         ];
 
-        $response = $this->putJson(route('updateWebsite'), $postData);
+        $response = $this->putJson(route('updateUserSubNotification'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testUpdateWebsite()
+    public function testUpdateUserSubNotification()
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
-        $website = Website::factory()->create();
+        $userSubNotification = UserSubNotification::factory()->create();
 
         $postData = [
-            'id' => $website->id,
-            'name' => $this->faker->unique()->name(),
-            'url' => $this->faker->url(),
-            'active' => '0'
+            'id' => $userSubNotification->id,
+            'name' => $this->faker->name(),
         ];
 
-        $response = $this->putJson(route('updateWebsite'), $postData);
+        $response = $this->putJson(route('updateUserSubNotification'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testErrorValidationForDeleteWebsite()
+    public function testErrorValidationForDeleteUserSubNotification()
     {
         $user = User::factory()->create();
 
@@ -103,52 +97,52 @@ class WebsiteTest extends TestCase
             'id' => 'abc'
         ];
 
-        $response = $this->deleteJson(route('deleteWebsite'), $postData);
+        $response = $this->deleteJson(route('deleteUserSubNotification'), $postData);
         $responseArray = $response->json();
 
         $this->assertFalse($responseArray['success']);
     }
 
-    public function testDeleteWebsite()
+    public function testDeleteUserSubNotification()
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
-        $website = Website::factory()->create();
+        $userSubNotification = UserSubNotification::factory()->create();
 
         $postData = [
-            'id' => $website->id
+            'id' => $userSubNotification->id
         ];
 
-        $response = $this->deleteJson(route('deleteWebsite'), $postData);
+        $response = $this->deleteJson(route('deleteUserSubNotification'), $postData);
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
     }
 
-    public function testReadWebsite(): void
+    public function testReadUserSubNotification(): void
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
-        $website = Website::factory()->create();
+        $userSubNotification = UserSubNotification::factory()->create();
 
-        $response = $this->getJson(route('readWebsite', ['id' => 'all']));
+        $response = $this->getJson(route('readUserSubNotification', ['id' => 'all']));
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
 
-        $response = $this->getJson(route('readWebsite', ['id' => $website->id]));
+        $response = $this->getJson(route('readUserSubNotification', ['id' => $userSubNotification->id]));
         $responseArray = $response->json();
 
         $response->assertOk();
         $this->assertTrue($responseArray['success']);
 
-        $response = $this->getJson(route('readWebsite'));
+        $response = $this->getJson(route('readUserSubNotification'));
         $responseArray = $response->json();
 
         $response->assertOk();
