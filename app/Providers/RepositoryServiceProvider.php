@@ -12,6 +12,7 @@ use App\Contracts\UserDeviceTokenRepositoryInterface;
 use App\Contracts\UserPasswordHolderRepositoryInterface;
 use App\Contracts\UserPubRepositoryInterface;
 use App\Contracts\UserSubRepositoryInterface;
+use App\Contracts\UserSubNotificationRepositoryInterface;
 use App\Contracts\WebsiteRepositoryInterface;
 use App\Repositories\ContactUsRepository;
 use App\Repositories\CustomerRepository;
@@ -23,6 +24,7 @@ use App\Repositories\UserDeviceTokenRepository;
 use App\Repositories\UserPasswordHolderRepository;
 use App\Repositories\UserPubRepository;
 use App\Repositories\UserSubRepository;
+use App\Repositories\UserSubNotificationRepository;
 use App\Repositories\WebsiteRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -43,6 +45,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(UserPasswordHolderRepositoryInterface::class, UserPasswordHolderRepository::class);
         $this->app->bind(UserPubRepositoryInterface::class, UserPubRepository::class);
         $this->app->bind(UserSubRepositoryInterface::class, UserSubRepository::class);
+        $this->app->bind(UserSubNotificationRepositoryInterface::class, UserSubNotificationRepository::class);
         $this->app->bind(WebsiteRepositoryInterface::class, WebsiteRepository::class);
     }
 
@@ -51,6 +54,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+
     }
 }

@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_pub_tests', function (Blueprint $table) {
+        Schema::create('user_sub_notifications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('website_id')->constrained('websites')->onDelete('cascade');
+            $table->foreignId('user_pub_id')->constrained('user_pubs')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_pub_tests');
+        Schema::dropIfExists('user_sub_notifications');
     }
 };
