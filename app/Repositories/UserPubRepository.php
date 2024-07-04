@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\UserPubRepositoryInterface;
 use App\Models\UserPub;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -86,5 +87,16 @@ class UserPubRepository implements UserPubRepositoryInterface
     public function getPaginated(int $pageSize): LengthAwarePaginator
     {
         return UserPub::paginate($pageSize);
+    }
+
+    /**
+     * Get new publications
+     *
+     * @param int $websiteId
+     * @return Builder
+     */
+    public function getNewPublications(int $websiteId): Builder
+    {
+        return UserPub::query()->where('website_id', $websiteId)->where('published', '0');
     }
 }

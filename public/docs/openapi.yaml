@@ -477,6 +477,437 @@ paths:
                 - id
                 - reason
                 - type
+  /api/user/user/sub/create:
+    post:
+      summary: 'Create UserSub.'
+      operationId: createUserSub
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: 'The id of the User.'
+                  example: '1'
+                website_id:
+                  type: string
+                  description: 'The id of the Website.'
+                  example: '1'
+                active:
+                  type: integer
+                  description: 'The active status for the Website which can either be 0 or 1.'
+                  example: 1
+              required:
+                - user_id
+                - website_id
+  /api/user/user/sub/delete:
+    delete:
+      summary: 'Delete UserSub.'
+      operationId: deleteUserSub
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The id of the UserSub.'
+                  example: '1'
+              required:
+                - id
+  '/api/user/user/sub/read/{id}':
+    get:
+      summary: 'Read UserSub.'
+      operationId: readUserSub
+      description: "Fetch a record or records from the UserSubs table.\nThe <b>id</b> param is optional but can either be a <b>string|null|int</b>\n\nIf the <b>id</b> has a <b>null</b> value the records will be paginated.\nThe returned page size is be set from <b>api.paginate.user_address.pageSize</b>\nconfig.\n\nIf the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.\nThis will return all the records without being paginated.\n\nIf the <b>id</b> value is an <b>integer</b> it will try to fetch a single\nmatching record."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Optional parameter. The ID of the record.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: all
+  /api/user/user/sub/update:
+    put:
+      summary: 'Update UserSub.'
+      operationId: updateUserSub
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The id of the UserSub.'
+                  example: '1'
+                active:
+                  type: string
+                  description: ''
+                  example: '1'
+                  enum:
+                    - '0'
+                    - '1'
+                name:
+                  type: string
+                  description: 'The name for the UserSub.'
+                  example: John
+              required:
+                - id
+                - active
+                - name
+  /api/user/user/website/create:
+    post:
+      summary: 'Create Website.'
+      operationId: createWebsite
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the Website.'
+                  example: 'ESPN Fake'
+                url:
+                  type: string
+                  description: 'The name of the Website.'
+                  example: 'https://espnfake.com'
+                active:
+                  type: integer
+                  description: 'The active status for the Website which can either be 0 or 1.'
+                  example: 1
+              required:
+                - name
+                - url
+  /api/user/user/website/delete:
+    delete:
+      summary: 'Delete Website.'
+      operationId: deleteWebsite
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The id of the Website.'
+                  example: '1'
+              required:
+                - id
+  '/api/user/user/website/read/{id}':
+    get:
+      summary: 'Read Website.'
+      operationId: readWebsite
+      description: "Fetch a record or records from the Websites table.\nThe <b>id</b> param is optional but can either be a <b>string|null|int</b>\n\nIf the <b>id</b> has a <b>null</b> value the records will be paginated.\nThe returned page size is be set from <b>api.paginate.user_address.pageSize</b>\nconfig.\n\nIf the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.\nThis will return all the records without being paginated.\n\nIf the <b>id</b> value is an <b>integer</b> it will try to fetch a single\nmatching record."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Optional parameter. The ID of the record.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: all
+  /api/user/user/website/update:
+    put:
+      summary: 'Update Website.'
+      operationId: updateWebsite
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The id of the Website.'
+                  example: '1'
+                name:
+                  type: string
+                  description: 'The name of the Website.'
+                  example: 'CNN Fake'
+                url:
+                  type: string
+                  description: 'The name of the Website.'
+                  example: 'https://cnnfake.com'
+                active:
+                  type: integer
+                  description: 'The active status for the Website which can either be 0 or 1.'
+                  example: 1
+              required:
+                - id
+                - name
+                - url
+  /api/user/user/pub/create:
+    post:
+      summary: 'Create UserPub.'
+      operationId: createUserPub
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: 'The id of the User.'
+                  example: '1'
+                website_id:
+                  type: string
+                  description: 'The id of the Website.'
+                  example: '1'
+                title:
+                  type: string
+                  description: 'The title of the WebsitePost.'
+                  example: 'New Post'
+                description:
+                  type: string
+                  description: 'The description of the WebsitePost.'
+                  example: 'This is a lovely post!'
+                active:
+                  type: integer
+                  description: 'The active status for the Website which can either be 0 or 1.'
+                  example: 1
+              required:
+                - website_id
+                - title
+                - description
+  /api/user/user/pub/delete:
+    delete:
+      summary: 'Delete UserPub.'
+      operationId: deleteUserPub
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The id of the UserPub.'
+                  example: '1'
+              required:
+                - id
+  '/api/user/user/pub/read/{id}':
+    get:
+      summary: 'Read UserPub.'
+      operationId: readUserPub
+      description: "Fetch a record or records from the UserPubs table.\nThe <b>id</b> param is optional but can either be a <b>string|null|int</b>\n\nIf the <b>id</b> has a <b>null</b> value the records will be paginated.\nThe returned page size is be set from <b>api.paginate.user_address.pageSize</b>\nconfig.\n\nIf the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.\nThis will return all the records without being paginated.\n\nIf the <b>id</b> value is an <b>integer</b> it will try to fetch a single\nmatching record."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Optional parameter. The ID of the record.'
+        required: true
+        schema:
+          type: string
+        examples:
+          omitted:
+            summary: 'When the value is omitted'
+            value: ''
+          present:
+            summary: 'When the value is present'
+            value: all
+  /api/user/user/pub/update:
+    put:
+      summary: 'Update UserPub.'
+      operationId: updateUserPub
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}"
+      tags:
+        - 'Auth APIs'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: 'The id of the UserPub.'
+                  example: '1'
+                title:
+                  type: string
+                  description: 'The title of the WebsitePost.'
+                  example: 'New Post'
+                description:
+                  type: string
+                  description: 'The description of the WebsitePost.'
+                  example: 'This is a lovely post!'
+                active:
+                  type: integer
+                  description: 'The active status for the Website which can either be 0 or 1.'
+                  example: 1
+              required:
+                - id
+                - title
+                - description
   /api/change/pin:
     post:
       summary: 'Change Pin.'
@@ -496,11 +927,11 @@ paths:
                 current_pin:
                   type: string
                   description: ''
-                  example: quod
+                  example: omnis
                 pin:
                   type: string
                   description: 'Must not be greater than 4 characters.'
-                  example: qstz
+                  example: g
               required:
                 - current_pin
                 - pin
@@ -520,7 +951,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 989c448f-1434-31b6-8417-107e3589f3b3
+        example: c105e491-55d4-3cea-8956-f333baab9ccd
         required: true
         schema:
           type: string
@@ -564,7 +995,31 @@ paths:
       operationId: getApiUserUser
       description: ''
       parameters: []
-      responses: {  }
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: false
+                  status_code: 401
+                  message: auth.unauthenticated
+                  data: []
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  status_code:
+                    type: integer
+                    example: 401
+                  message:
+                    type: string
+                    example: auth.unauthenticated
+                  data:
+                    type: array
+                    example: []
       tags:
         - Endpoints
       security: []
@@ -607,39 +1062,15 @@ paths:
                   type: string
                   description: 'The password for user authentication must contain uppercase, lowercase, symbols, numbers.'
                   example: Ex@m122p$%l6E
-                first_name:
-                  type: string
-                  description: 'The first name of the user.'
-                  example: John
-                middle_name:
-                  type: string
-                  description: 'The middle name of the user.'
-                  example: Bison
-                last_name:
-                  type: string
-                  description: 'The last name of the user.'
-                  example: Doe
-                unit_number:
-                  type: string
-                  description: 'The unit number of the user.'
-                  example: NG08012345678
                 password_confirmation:
                   type: string
                   description: 'Must match <small class="badge badge-blue">password</small> Field.'
                   example: Ex@m122p$%l6E
-                type:
-                  type: string
-                  description: 'The type of user must either be individual or business.'
-                  example: individual
               required:
                 - name
                 - email
                 - phone
                 - password
-                - first_name
-                - middle_name
-                - last_name
-                - unit_number
                 - password_confirmation
       security: []
   /api/auth/login:

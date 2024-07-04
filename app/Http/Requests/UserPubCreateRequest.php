@@ -24,7 +24,7 @@ class UserPubCreateRequest extends BaseFormRequest
             'website_id' => 'required|exists:websites,id,deleted_at,NULL',
             'title' => 'required|string|max:150',
             'description' => 'required|string|max:2000',
-            'active' => 'sometimes|in:0,1'
+            // 'active' => 'sometimes|in:0,1'
         ];
     }
 }

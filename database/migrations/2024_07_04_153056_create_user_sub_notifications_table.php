@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('website_id')->constrained('websites')->onDelete('cascade');
             $table->foreignId('user_pub_id')->constrained('user_pubs')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class WebsiteCreateRequest extends BaseFormRequest
         return [
             'name' => 'required|string|unique:websites,name|max:150',
             'url' => 'required|url',
-            'active' => 'sometimes|in:0,1'
+            // 'active' => 'sometimes|in:0,1'
         ];
     }
 }

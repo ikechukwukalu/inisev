@@ -65,4 +65,14 @@ interface UserSubNotificationRepositoryInterface
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function getPaginated(int $pageSize): LengthAwarePaginator;
+
+    /**
+     * Get subscription
+     *
+     * @param integer $userId
+     * @param integer $userPubId
+     * @param integer $websiteId
+     * @return UserSubNotification|null
+     */
+    public function getSubscription(int $userId, int $userPubId, int $websiteId): UserSubNotification|null;
 }

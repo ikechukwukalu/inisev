@@ -26,7 +26,7 @@ endpoints:
         name: current_pin
         description: ''
         required: true
-        example: quod
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: pin
         description: 'Must not be greater than 4 characters.'
         required: true
-        example: qstz
+        example: g
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      current_pin: quod
-      pin: qstz
+      current_pin: omnis
+      pin: g
     fileParameters: []
     responses: []
     responseFields: []
@@ -72,13 +72,13 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: 989c448f-1434-31b6-8417-107e3589f3b3
+        example: c105e491-55d4-3cea-8956-f333baab9ccd
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      uuid: 989c448f-1434-31b6-8417-107e3589f3b3
+      uuid: c105e491-55d4-3cea-8956-f333baab9ccd
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -153,7 +153,16 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 401
+        content: '{"success":false,"status_code":401,"message":"auth.unauthenticated","data":[]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null

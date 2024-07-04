@@ -3,6 +3,7 @@
 namespace App\Contracts;
 
 use App\Models\UserPub;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -65,4 +66,12 @@ interface UserPubRepositoryInterface
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function getPaginated(int $pageSize): LengthAwarePaginator;
+
+    /**
+     * Get new publications
+     *
+     * @param int $websiteId
+     * @return Builder
+     */
+    public function getNewPublications(int $websiteId): Builder;
 }

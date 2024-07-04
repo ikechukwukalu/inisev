@@ -18,10 +18,12 @@ class UserPub extends Model
         'website_id',
         'title',
         'description',
+        'published',
         'active'
     ];
 
     protected $casts = [
+        'published' => 'boolean',
         'active' => 'boolean',
     ];
 

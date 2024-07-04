@@ -87,4 +87,20 @@ class UserSubNotificationRepository implements UserSubNotificationRepositoryInte
     {
         return UserSubNotification::paginate($pageSize);
     }
+
+    /**
+     * Get subscription
+     *
+     * @param integer $userId
+     * @param integer $userPubId
+     * @param integer $websiteId
+     * @return UserSubNotification|null
+     */
+    public function getSubscription(int $userId, int $userPubId, int $websiteId): UserSubNotification|null
+    {
+        return UserSubNotification::where('user_id', $userId)
+                ->where('user_pub_id', $userPubId)
+                ->where('website_id', $websiteId)
+                ->first();
+    }
 }

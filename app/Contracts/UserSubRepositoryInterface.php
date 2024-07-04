@@ -3,6 +3,7 @@
 namespace App\Contracts;
 
 use App\Models\UserSub;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -65,4 +66,12 @@ interface UserSubRepositoryInterface
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function getPaginated(int $pageSize): LengthAwarePaginator;
+
+    /**
+     * Get by website ID
+     *
+     * @param integer $websiteId
+     * @return Builder
+     */
+    public function getByWebsiteId(int $websiteId): Builder;
 }

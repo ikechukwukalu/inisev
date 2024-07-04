@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('website_id')->constrained('websites')->onDelete('cascade');
             $table->string('title');
             $table->longText('description');
+            $table->enum('published', ['0', '1'])->default(0);
             $table->enum('active', ['0', '1'])->default(1);
             $table->softDeletes();
             $table->timestamps();

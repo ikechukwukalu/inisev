@@ -3,6 +3,7 @@
 namespace App\Contracts;
 
 use App\Models\Website;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -65,4 +66,11 @@ interface WebsiteRepositoryInterface
      * @return \Illuminate\Pagination\LengthAwarePaginator
      */
     public function getPaginated(int $pageSize): LengthAwarePaginator;
+
+    /**
+     * Query builder for validation
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function queryBuilder(): Builder;
 }

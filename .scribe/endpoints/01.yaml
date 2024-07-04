@@ -999,3 +999,837 @@ endpoints:
     method: null
     route: null
     custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/user/sub/create
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserSub APIs'
+      subgroupDescription: ''
+      title: 'Create UserSub.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'The id of the User.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      website_id:
+        name: website_id
+        description: 'The id of the Website.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The active status for the Website which can either be 0 or 1.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      user_id: '1'
+      website_id: '1'
+      active: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/user/user/sub/delete
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserSub APIs'
+      subgroupDescription: ''
+      title: 'Delete UserSub.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the UserSub.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      id: '1'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/user/user/sub/read/{id?}'
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserSub APIs'
+      subgroupDescription: ''
+      title: 'Read UserSub.'
+      description: |-
+        Fetch a record or records from the UserSubs table.
+        The <b>id</b> param is optional but can either be a <b>string|null|int</b>
+
+        If the <b>id</b> has a <b>null</b> value the records will be paginated.
+        The returned page size is be set from <b>api.paginate.user_address.pageSize</b>
+        config.
+
+        If the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.
+        This will return all the records without being paginated.
+
+        If the <b>id</b> value is an <b>integer</b> it will try to fetch a single
+        matching record.
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the record.'
+        required: false
+        example: all
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: all
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/user/user/sub/update
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserSub APIs'
+      subgroupDescription: ''
+      title: 'Update UserSub.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the UserSub.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: ''
+        required: true
+        example: '1'
+        type: string
+        enumValues:
+          - '0'
+          - '1'
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: 'The name for the UserSub.'
+        required: true
+        example: John
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      id: '1'
+      active: '1'
+      name: John
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/user/website/create
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'Website APIs'
+      subgroupDescription: ''
+      title: 'Create Website.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the Website.'
+        required: true
+        example: 'ESPN Fake'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      url:
+        name: url
+        description: 'The name of the Website.'
+        required: true
+        example: 'https://espnfake.com'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The active status for the Website which can either be 0 or 1.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      name: 'ESPN Fake'
+      url: 'https://espnfake.com'
+      active: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/user/user/website/delete
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'Website APIs'
+      subgroupDescription: ''
+      title: 'Delete Website.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the Website.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      id: '1'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/user/user/website/read/{id?}'
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'Website APIs'
+      subgroupDescription: ''
+      title: 'Read Website.'
+      description: |-
+        Fetch a record or records from the Websites table.
+        The <b>id</b> param is optional but can either be a <b>string|null|int</b>
+
+        If the <b>id</b> has a <b>null</b> value the records will be paginated.
+        The returned page size is be set from <b>api.paginate.user_address.pageSize</b>
+        config.
+
+        If the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.
+        This will return all the records without being paginated.
+
+        If the <b>id</b> value is an <b>integer</b> it will try to fetch a single
+        matching record.
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the record.'
+        required: false
+        example: all
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: all
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/user/user/website/update
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'Website APIs'
+      subgroupDescription: ''
+      title: 'Update Website.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the Website.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      name:
+        name: name
+        description: 'The name of the Website.'
+        required: true
+        example: 'CNN Fake'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      url:
+        name: url
+        description: 'The name of the Website.'
+        required: true
+        example: 'https://cnnfake.com'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The active status for the Website which can either be 0 or 1.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      id: '1'
+      name: 'CNN Fake'
+      url: 'https://cnnfake.com'
+      active: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/user/user/pub/create
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserPub APIs'
+      subgroupDescription: ''
+      title: 'Create UserPub.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'The id of the User.'
+        required: false
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      website_id:
+        name: website_id
+        description: 'The id of the Website.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      title:
+        name: title
+        description: 'The title of the WebsitePost.'
+        required: true
+        example: 'New Post'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description:
+        name: description
+        description: 'The description of the WebsitePost.'
+        required: true
+        example: 'This is a lovely post!'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The active status for the Website which can either be 0 or 1.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      user_id: '1'
+      website_id: '1'
+      title: 'New Post'
+      description: 'This is a lovely post!'
+      active: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: api/user/user/pub/delete
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserPub APIs'
+      subgroupDescription: ''
+      title: 'Delete UserPub.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the UserPub.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      id: '1'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/user/user/pub/read/{id?}'
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserPub APIs'
+      subgroupDescription: ''
+      title: 'Read UserPub.'
+      description: |-
+        Fetch a record or records from the UserPubs table.
+        The <b>id</b> param is optional but can either be a <b>string|null|int</b>
+
+        If the <b>id</b> has a <b>null</b> value the records will be paginated.
+        The returned page size is be set from <b>api.paginate.user_address.pageSize</b>
+        config.
+
+        If the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.
+        This will return all the records without being paginated.
+
+        If the <b>id</b> value is an <b>integer</b> it will try to fetch a single
+        matching record.
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the record.'
+        required: false
+        example: all
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      id: all
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/user/user/pub/update
+    metadata:
+      groupName: 'Auth APIs'
+      groupDescription: ''
+      subgroup: 'UserPub APIs'
+      subgroupDescription: ''
+      title: 'Update UserPub.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {Your key}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      id:
+        name: id
+        description: 'The id of the UserPub.'
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      title:
+        name: title
+        description: 'The title of the WebsitePost.'
+        required: true
+        example: 'New Post'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      description:
+        name: description
+        description: 'The description of the WebsitePost.'
+        required: true
+        example: 'This is a lovely post!'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      active:
+        name: active
+        description: 'The active status for the Website which can either be 0 or 1.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      id: '1'
+      title: 'New Post'
+      description: 'This is a lovely post!'
+      active: 1
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "success": true,
+          "status_code": 200,
+          "message": string
+          "data": {}
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

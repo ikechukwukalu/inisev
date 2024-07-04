@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\UserSubRepositoryInterface;
 use App\Models\UserSub;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -86,5 +87,16 @@ class UserSubRepository implements UserSubRepositoryInterface
     public function getPaginated(int $pageSize): LengthAwarePaginator
     {
         return UserSub::with(['user', 'website'])->paginate($pageSize);
+    }
+
+    /**
+     * Get by website ID
+     *
+     * @param integer $websiteId
+     * @return Builder
+     */
+    public function getByWebsiteId(int $websiteId): Builder
+    {
+        return UserSub::query()->where('website_id', $websiteId);
     }
 }

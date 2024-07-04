@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\WebsiteRepositoryInterface;
 use App\Models\Website;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -86,5 +87,15 @@ class WebsiteRepository implements WebsiteRepositoryInterface
     public function getPaginated(int $pageSize): LengthAwarePaginator
     {
         return Website::paginate($pageSize);
+    }
+
+    /**
+     * Query builder
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function queryBuilder(): Builder
+    {
+        return Website::query();
     }
 }

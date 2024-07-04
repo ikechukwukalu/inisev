@@ -7,6 +7,9 @@ use App\Http\Controllers\Auth\TwoFactorController;
 use App\Http\Controllers\Auth\ContactUsController;
 use App\Http\Controllers\Auth\UserDeviceTokenController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\UserPubController;
+use App\Http\Controllers\UserSubController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +43,36 @@ Route::prefix('user')->group(function () {
             Route::delete('delete', [ContactUsController::class, 'delete'])->name('deleteContactUs');
             Route::get('read/{id?}', [ContactUsController::class, 'read'])->name('readContactUs');
             Route::put('update', [ContactUsController::class, 'update'])->name('updateContactUs');
+        });
+
+        Route::prefix('user')->group(function () {
+
+            Route::prefix('sub')->group(function () {
+
+                Route::post('create', [UserSubController::class, 'create'])->name('createUserSub');
+                Route::delete('delete', [UserSubController::class, 'delete'])->name('deleteUserSub');
+                Route::get('read/{id?}', [UserSubController::class, 'read'])->name('readUserSub');
+                Route::put('update', [UserSubController::class, 'update'])->name('updateUserSub');
+
+            });
+
+            Route::prefix('website')->group(function () {
+
+                Route::post('create', [WebsiteController::class, 'create'])->name('createWebsite');
+                Route::delete('delete', [WebsiteController::class, 'delete'])->name('deleteWebsite');
+                Route::get('read/{id?}', [WebsiteController::class, 'read'])->name('readWebsite');
+                Route::put('update', [WebsiteController::class, 'update'])->name('updateWebsite');
+
+            });
+
+            Route::prefix('pub')->group(function () {
+
+                Route::post('create', [UserPubController::class, 'create'])->name('createUserPub');
+                Route::delete('delete', [UserPubController::class, 'delete'])->name('deleteUserPub');
+                Route::get('read/{id?}', [UserPubController::class, 'read'])->name('readUserPub');
+                Route::put('update', [UserPubController::class, 'update'])->name('updateUserPub');
+
+            });
         });
 
     });

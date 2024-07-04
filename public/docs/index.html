@@ -137,6 +137,57 @@
                                             <a href="#auth-apis-PUTapi-user-contact_us-update">Update contact us message.</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="auth-apis-usersub-apis">
+                                <a href="#auth-apis-usersub-apis">UserSub APIs</a>
+                            </li>
+                                                            <ul id="tocify-subheader-auth-apis-usersub-apis" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-POSTapi-user-user-sub-create">
+                                            <a href="#auth-apis-POSTapi-user-user-sub-create">Create UserSub.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-DELETEapi-user-user-sub-delete">
+                                            <a href="#auth-apis-DELETEapi-user-user-sub-delete">Delete UserSub.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-GETapi-user-user-sub-read--id--">
+                                            <a href="#auth-apis-GETapi-user-user-sub-read--id--">Read UserSub.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-PUTapi-user-user-sub-update">
+                                            <a href="#auth-apis-PUTapi-user-user-sub-update">Update UserSub.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="auth-apis-website-apis">
+                                <a href="#auth-apis-website-apis">Website APIs</a>
+                            </li>
+                                                            <ul id="tocify-subheader-auth-apis-website-apis" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-POSTapi-user-user-website-create">
+                                            <a href="#auth-apis-POSTapi-user-user-website-create">Create Website.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-DELETEapi-user-user-website-delete">
+                                            <a href="#auth-apis-DELETEapi-user-user-website-delete">Delete Website.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-GETapi-user-user-website-read--id--">
+                                            <a href="#auth-apis-GETapi-user-user-website-read--id--">Read Website.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-PUTapi-user-user-website-update">
+                                            <a href="#auth-apis-PUTapi-user-user-website-update">Update Website.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="auth-apis-userpub-apis">
+                                <a href="#auth-apis-userpub-apis">UserPub APIs</a>
+                            </li>
+                                                            <ul id="tocify-subheader-auth-apis-userpub-apis" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-POSTapi-user-user-pub-create">
+                                            <a href="#auth-apis-POSTapi-user-user-pub-create">Create UserPub.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-DELETEapi-user-user-pub-delete">
+                                            <a href="#auth-apis-DELETEapi-user-user-pub-delete">Delete UserPub.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-GETapi-user-user-pub-read--id--">
+                                            <a href="#auth-apis-GETapi-user-user-pub-read--id--">Read UserPub.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="auth-apis-PUTapi-user-user-pub-update">
+                                            <a href="#auth-apis-PUTapi-user-user-pub-update">Update UserPub.</a>
+                                        </li>
+                                                                    </ul>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
@@ -2888,6 +2939,2076 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                                <h2 id="auth-apis-usersub-apis">UserSub APIs</h2>
+                                                    <h2 id="auth-apis-POSTapi-user-user-sub-create">Create UserSub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-user-user-sub-create">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/user/user/sub/create" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": \"1\",
+    \"website_id\": \"1\",
+    \"active\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/sub/create"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "1",
+    "website_id": "1",
+    "active": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-user-sub-create">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-user-user-sub-create" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-user-sub-create"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-user-sub-create"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-user-sub-create" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-user-sub-create">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-user-sub-create" data-method="POST"
+      data-path="api/user/user/sub/create"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-user-sub-create', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-user-sub-create"
+                    onclick="tryItOut('POSTapi-user-user-sub-create');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-user-sub-create"
+                    onclick="cancelTryOut('POSTapi-user-user-sub-create');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-user-sub-create"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/user/sub/create</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-user-user-sub-create"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-user-sub-create"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-user-sub-create"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="POSTapi-user-user-sub-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the User. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>website_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="website_id"                data-endpoint="POSTapi-user-user-sub-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the Website. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="active"                data-endpoint="POSTapi-user-user-sub-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The active status for the Website which can either be 0 or 1. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="auth-apis-DELETEapi-user-user-sub-delete">Delete UserSub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-user-user-sub-delete">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://127.0.0.1:8000/api/user/user/sub/delete" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"1\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/sub/delete"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "1"
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-user-user-sub-delete">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-user-user-sub-delete" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-user-user-sub-delete"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user-user-sub-delete"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-user-user-sub-delete" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user-user-sub-delete">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-user-user-sub-delete" data-method="DELETE"
+      data-path="api/user/user/sub/delete"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user-user-sub-delete', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-user-user-sub-delete"
+                    onclick="tryItOut('DELETEapi-user-user-sub-delete');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-user-user-sub-delete"
+                    onclick="cancelTryOut('DELETEapi-user-user-sub-delete');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-user-user-sub-delete"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/user/user/sub/delete</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-user-user-sub-delete"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-user-user-sub-delete"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-user-user-sub-delete"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-user-user-sub-delete"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the UserSub. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="auth-apis-GETapi-user-user-sub-read--id--">Read UserSub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Fetch a record or records from the UserSubs table.
+The <b>id</b> param is optional but can either be a <b>string|null|int</b></p>
+<p>If the <b>id</b> has a <b>null</b> value the records will be paginated.
+The returned page size is be set from <b>api.paginate.user_address.pageSize</b>
+config.</p>
+<p>If the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.
+This will return all the records without being paginated.</p>
+<p>If the <b>id</b> value is an <b>integer</b> it will try to fetch a single
+matching record.</p>
+
+<span id="example-requests-GETapi-user-user-sub-read--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/user/user/sub/read/all" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/sub/read/all"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user-user-sub-read--id--">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user-user-sub-read--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user-user-sub-read--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-user-sub-read--id--"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user-user-sub-read--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-user-sub-read--id--">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user-user-sub-read--id--" data-method="GET"
+      data-path="api/user/user/sub/read/{id?}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user-user-sub-read--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user-user-sub-read--id--"
+                    onclick="tryItOut('GETapi-user-user-sub-read--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user-user-sub-read--id--"
+                    onclick="cancelTryOut('GETapi-user-user-sub-read--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user-user-sub-read--id--"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/user/sub/read/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-user-user-sub-read--id--"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user-user-sub-read--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user-user-sub-read--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-user-user-sub-read--id--"
+               value="all"
+               data-component="url">
+    <br>
+<p>The ID of the record. Example: <code>all</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="auth-apis-PUTapi-user-user-sub-update">Update UserSub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-user-user-sub-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/user/user/sub/update" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"1\",
+    \"active\": \"1\",
+    \"name\": \"John\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/sub/update"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "1",
+    "active": "1",
+    "name": "John"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-user-user-sub-update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-user-user-sub-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-user-user-sub-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-user-user-sub-update"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-user-user-sub-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-user-user-sub-update">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-user-user-sub-update" data-method="PUT"
+      data-path="api/user/user/sub/update"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-user-user-sub-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-user-user-sub-update"
+                    onclick="tryItOut('PUTapi-user-user-sub-update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-user-user-sub-update"
+                    onclick="cancelTryOut('PUTapi-user-user-sub-update');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-user-user-sub-update"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/user/user/sub/update</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-user-user-sub-update"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-user-user-sub-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-user-user-sub-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-user-user-sub-update"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the UserSub. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="active"                data-endpoint="PUTapi-user-user-sub-update"
+               value="1"
+               data-component="body">
+    <br>
+<p>Example: <code>1</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>0</code></li> <li><code>1</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-user-user-sub-update"
+               value="John"
+               data-component="body">
+    <br>
+<p>The name for the UserSub. Example: <code>John</code></p>
+        </div>
+        </form>
+
+                                <h2 id="auth-apis-website-apis">Website APIs</h2>
+                                                    <h2 id="auth-apis-POSTapi-user-user-website-create">Create Website.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-user-user-website-create">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/user/user/website/create" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"ESPN Fake\",
+    \"url\": \"https:\\/\\/espnfake.com\",
+    \"active\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/website/create"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "ESPN Fake",
+    "url": "https:\/\/espnfake.com",
+    "active": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-user-website-create">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-user-user-website-create" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-user-website-create"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-user-website-create"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-user-website-create" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-user-website-create">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-user-website-create" data-method="POST"
+      data-path="api/user/user/website/create"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-user-website-create', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-user-website-create"
+                    onclick="tryItOut('POSTapi-user-user-website-create');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-user-website-create"
+                    onclick="cancelTryOut('POSTapi-user-user-website-create');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-user-website-create"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/user/website/create</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-user-user-website-create"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-user-website-create"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-user-website-create"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-user-user-website-create"
+               value="ESPN Fake"
+               data-component="body">
+    <br>
+<p>The name of the Website. Example: <code>ESPN Fake</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="url"                data-endpoint="POSTapi-user-user-website-create"
+               value="https://espnfake.com"
+               data-component="body">
+    <br>
+<p>The name of the Website. Example: <code>https://espnfake.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="active"                data-endpoint="POSTapi-user-user-website-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The active status for the Website which can either be 0 or 1. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="auth-apis-DELETEapi-user-user-website-delete">Delete Website.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-user-user-website-delete">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://127.0.0.1:8000/api/user/user/website/delete" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"1\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/website/delete"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "1"
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-user-user-website-delete">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-user-user-website-delete" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-user-user-website-delete"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user-user-website-delete"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-user-user-website-delete" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user-user-website-delete">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-user-user-website-delete" data-method="DELETE"
+      data-path="api/user/user/website/delete"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user-user-website-delete', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-user-user-website-delete"
+                    onclick="tryItOut('DELETEapi-user-user-website-delete');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-user-user-website-delete"
+                    onclick="cancelTryOut('DELETEapi-user-user-website-delete');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-user-user-website-delete"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/user/user/website/delete</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-user-user-website-delete"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-user-user-website-delete"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-user-user-website-delete"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-user-user-website-delete"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the Website. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="auth-apis-GETapi-user-user-website-read--id--">Read Website.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Fetch a record or records from the Websites table.
+The <b>id</b> param is optional but can either be a <b>string|null|int</b></p>
+<p>If the <b>id</b> has a <b>null</b> value the records will be paginated.
+The returned page size is be set from <b>api.paginate.user_address.pageSize</b>
+config.</p>
+<p>If the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.
+This will return all the records without being paginated.</p>
+<p>If the <b>id</b> value is an <b>integer</b> it will try to fetch a single
+matching record.</p>
+
+<span id="example-requests-GETapi-user-user-website-read--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/user/user/website/read/all" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/website/read/all"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user-user-website-read--id--">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user-user-website-read--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user-user-website-read--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-user-website-read--id--"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user-user-website-read--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-user-website-read--id--">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user-user-website-read--id--" data-method="GET"
+      data-path="api/user/user/website/read/{id?}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user-user-website-read--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user-user-website-read--id--"
+                    onclick="tryItOut('GETapi-user-user-website-read--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user-user-website-read--id--"
+                    onclick="cancelTryOut('GETapi-user-user-website-read--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user-user-website-read--id--"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/user/website/read/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-user-user-website-read--id--"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user-user-website-read--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user-user-website-read--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-user-user-website-read--id--"
+               value="all"
+               data-component="url">
+    <br>
+<p>The ID of the record. Example: <code>all</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="auth-apis-PUTapi-user-user-website-update">Update Website.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-user-user-website-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/user/user/website/update" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"1\",
+    \"name\": \"CNN Fake\",
+    \"url\": \"https:\\/\\/cnnfake.com\",
+    \"active\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/website/update"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "1",
+    "name": "CNN Fake",
+    "url": "https:\/\/cnnfake.com",
+    "active": 1
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-user-user-website-update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-user-user-website-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-user-user-website-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-user-user-website-update"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-user-user-website-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-user-user-website-update">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-user-user-website-update" data-method="PUT"
+      data-path="api/user/user/website/update"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-user-user-website-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-user-user-website-update"
+                    onclick="tryItOut('PUTapi-user-user-website-update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-user-user-website-update"
+                    onclick="cancelTryOut('PUTapi-user-user-website-update');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-user-user-website-update"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/user/user/website/update</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-user-user-website-update"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-user-user-website-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-user-user-website-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-user-user-website-update"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the Website. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-user-user-website-update"
+               value="CNN Fake"
+               data-component="body">
+    <br>
+<p>The name of the Website. Example: <code>CNN Fake</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="url"                data-endpoint="PUTapi-user-user-website-update"
+               value="https://cnnfake.com"
+               data-component="body">
+    <br>
+<p>The name of the Website. Example: <code>https://cnnfake.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="active"                data-endpoint="PUTapi-user-user-website-update"
+               value="1"
+               data-component="body">
+    <br>
+<p>The active status for the Website which can either be 0 or 1. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                                <h2 id="auth-apis-userpub-apis">UserPub APIs</h2>
+                                                    <h2 id="auth-apis-POSTapi-user-user-pub-create">Create UserPub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-user-user-pub-create">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/user/user/pub/create" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": \"1\",
+    \"website_id\": \"1\",
+    \"title\": \"New Post\",
+    \"description\": \"This is a lovely post!\",
+    \"active\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/pub/create"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": "1",
+    "website_id": "1",
+    "title": "New Post",
+    "description": "This is a lovely post!",
+    "active": 1
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-user-pub-create">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-user-user-pub-create" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-user-pub-create"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-user-pub-create"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-user-pub-create" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-user-pub-create">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-user-pub-create" data-method="POST"
+      data-path="api/user/user/pub/create"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-user-pub-create', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-user-pub-create"
+                    onclick="tryItOut('POSTapi-user-user-pub-create');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-user-pub-create"
+                    onclick="cancelTryOut('POSTapi-user-user-pub-create');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-user-pub-create"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/user/pub/create</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-user-user-pub-create"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-user-pub-create"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-user-pub-create"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="user_id"                data-endpoint="POSTapi-user-user-pub-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the User. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>website_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="website_id"                data-endpoint="POSTapi-user-user-pub-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the Website. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="POSTapi-user-user-pub-create"
+               value="New Post"
+               data-component="body">
+    <br>
+<p>The title of the WebsitePost. Example: <code>New Post</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="POSTapi-user-user-pub-create"
+               value="This is a lovely post!"
+               data-component="body">
+    <br>
+<p>The description of the WebsitePost. Example: <code>This is a lovely post!</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="active"                data-endpoint="POSTapi-user-user-pub-create"
+               value="1"
+               data-component="body">
+    <br>
+<p>The active status for the Website which can either be 0 or 1. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="auth-apis-DELETEapi-user-user-pub-delete">Delete UserPub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-user-user-pub-delete">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://127.0.0.1:8000/api/user/user/pub/delete" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"1\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/pub/delete"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "1"
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-user-user-pub-delete">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-user-user-pub-delete" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-user-user-pub-delete"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-user-user-pub-delete"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-user-user-pub-delete" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-user-user-pub-delete">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-user-user-pub-delete" data-method="DELETE"
+      data-path="api/user/user/pub/delete"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-user-user-pub-delete', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-user-user-pub-delete"
+                    onclick="tryItOut('DELETEapi-user-user-pub-delete');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-user-user-pub-delete"
+                    onclick="cancelTryOut('DELETEapi-user-user-pub-delete');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-user-user-pub-delete"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/user/user/pub/delete</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-user-user-pub-delete"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-user-user-pub-delete"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-user-user-pub-delete"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-user-user-pub-delete"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the UserPub. Example: <code>1</code></p>
+        </div>
+        </form>
+
+                    <h2 id="auth-apis-GETapi-user-user-pub-read--id--">Read UserPub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Fetch a record or records from the UserPubs table.
+The <b>id</b> param is optional but can either be a <b>string|null|int</b></p>
+<p>If the <b>id</b> has a <b>null</b> value the records will be paginated.
+The returned page size is be set from <b>api.paginate.user_address.pageSize</b>
+config.</p>
+<p>If the <b>id</b> is a <b>string</b> value it can only be set as <b>'all'</b>.
+This will return all the records without being paginated.</p>
+<p>If the <b>id</b> value is an <b>integer</b> it will try to fetch a single
+matching record.</p>
+
+<span id="example-requests-GETapi-user-user-pub-read--id--">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/user/user/pub/read/all" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/pub/read/all"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user-user-pub-read--id--">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user-user-pub-read--id--" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user-user-pub-read--id--"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-user-pub-read--id--"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user-user-pub-read--id--" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-user-pub-read--id--">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user-user-pub-read--id--" data-method="GET"
+      data-path="api/user/user/pub/read/{id?}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user-user-pub-read--id--', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user-user-pub-read--id--"
+                    onclick="tryItOut('GETapi-user-user-pub-read--id--');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user-user-pub-read--id--"
+                    onclick="cancelTryOut('GETapi-user-user-pub-read--id--');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user-user-pub-read--id--"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/user/pub/read/{id?}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-user-user-pub-read--id--"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user-user-pub-read--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user-user-pub-read--id--"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-user-user-pub-read--id--"
+               value="all"
+               data-component="url">
+    <br>
+<p>The ID of the record. Example: <code>all</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="auth-apis-PUTapi-user-user-pub-update">Update UserPub.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-user-user-pub-update">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://127.0.0.1:8000/api/user/user/pub/update" \
+    --header "Authorization: Bearer {Your key}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"id\": \"1\",
+    \"title\": \"New Post\",
+    \"description\": \"This is a lovely post!\",
+    \"active\": 1
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/user/user/pub/update"
+);
+
+const headers = {
+    "Authorization": "Bearer {Your key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": "1",
+    "title": "New Post",
+    "description": "This is a lovely post!",
+    "active": 1
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-user-user-pub-update">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;success&quot;: true,
+&quot;status_code&quot;: 200,
+&quot;message&quot;: string
+&quot;data&quot;: {}
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-user-user-pub-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-user-user-pub-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-user-user-pub-update"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-user-user-pub-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-user-user-pub-update">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-user-user-pub-update" data-method="PUT"
+      data-path="api/user/user/pub/update"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-user-user-pub-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-user-user-pub-update"
+                    onclick="tryItOut('PUTapi-user-user-pub-update');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-user-user-pub-update"
+                    onclick="cancelTryOut('PUTapi-user-user-pub-update');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-user-user-pub-update"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/user/user/pub/update</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-user-user-pub-update"
+               value="Bearer {Your key}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {Your key}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-user-user-pub-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-user-user-pub-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-user-user-pub-update"
+               value="1"
+               data-component="body">
+    <br>
+<p>The id of the UserPub. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="PUTapi-user-user-pub-update"
+               value="New Post"
+               data-component="body">
+    <br>
+<p>The title of the WebsitePost. Example: <code>New Post</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-user-user-pub-update"
+               value="This is a lovely post!"
+               data-component="body">
+    <br>
+<p>The description of the WebsitePost. Example: <code>This is a lovely post!</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="active"                data-endpoint="PUTapi-user-user-pub-update"
+               value="1"
+               data-component="body">
+    <br>
+<p>The active status for the Website which can either be 0 or 1. Example: <code>1</code></p>
+        </div>
+        </form>
+
                 <h1 id="endpoints">Endpoints</h1>
 
     
@@ -2909,8 +5030,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"current_pin\": \"quod\",
-    \"pin\": \"qstz\"
+    \"current_pin\": \"omnis\",
+    \"pin\": \"g\"
 }"
 </code></pre></div>
 
@@ -2926,8 +5047,8 @@ const headers = {
 };
 
 let body = {
-    "current_pin": "quod",
-    "pin": "qstz"
+    "current_pin": "omnis",
+    "pin": "g"
 };
 
 fetch(url, {
@@ -3016,10 +5137,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="current_pin"                data-endpoint="POSTapi-change-pin"
-               value="quod"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>quod</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pin</code></b>&nbsp;&nbsp;
@@ -3027,10 +5148,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="pin"                data-endpoint="POSTapi-change-pin"
-               value="qstz"
+               value="g"
                data-component="body">
     <br>
-<p>Must not be greater than 4 characters. Example: <code>qstz</code></p>
+<p>Must not be greater than 4 characters. Example: <code>g</code></p>
         </div>
         </form>
 
@@ -3047,14 +5168,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/pin/required/989c448f-1434-31b6-8417-107e3589f3b3" \
+    "http://127.0.0.1:8000/api/pin/required/c105e491-55d4-3cea-8956-f333baab9ccd" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/pin/required/989c448f-1434-31b6-8417-107e3589f3b3"
+    "http://127.0.0.1:8000/api/pin/required/c105e491-55d4-3cea-8956-f333baab9ccd"
 );
 
 const headers = {
@@ -3147,10 +5268,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uuid"                data-endpoint="POSTapi-pin-required--uuid-"
-               value="989c448f-1434-31b6-8417-107e3589f3b3"
+               value="c105e491-55d4-3cea-8956-f333baab9ccd"
                data-component="url">
     <br>
-<p>Example: <code>989c448f-1434-31b6-8417-107e3589f3b3</code></p>
+<p>Example: <code>c105e491-55d4-3cea-8956-f333baab9ccd</code></p>
             </div>
                     </form>
 
@@ -3317,6 +5438,25 @@ fetch(url, {
 </span>
 
 <span id="example-responses-GETapi-user-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;status_code&quot;: 401,
+    &quot;message&quot;: &quot;auth.unauthenticated&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
     </span>
 <span id="execution-results-GETapi-user-user" hidden>
     <blockquote>Received response<span
@@ -3418,12 +5558,7 @@ You can also set <b>registration.autologin</b> to <b>TRUE</b>.</p>
     \"email\": \"johndoe@xyz.com\",
     \"phone\": \"08012345678\",
     \"password\": \"Ex@m122p$%l6E\",
-    \"first_name\": \"John\",
-    \"middle_name\": \"Bison\",
-    \"last_name\": \"Doe\",
-    \"unit_number\": \"NG08012345678\",
-    \"password_confirmation\": \"Ex@m122p$%l6E\",
-    \"type\": \"individual\"
+    \"password_confirmation\": \"Ex@m122p$%l6E\"
 }"
 </code></pre></div>
 
@@ -3443,12 +5578,7 @@ let body = {
     "email": "johndoe@xyz.com",
     "phone": "08012345678",
     "password": "Ex@m122p$%l6E",
-    "first_name": "John",
-    "middle_name": "Bison",
-    "last_name": "Doe",
-    "unit_number": "NG08012345678",
-    "password_confirmation": "Ex@m122p$%l6E",
-    "type": "individual"
+    "password_confirmation": "Ex@m122p$%l6E"
 };
 
 fetch(url, {
@@ -3588,50 +5718,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>The password for user authentication must contain uppercase, lowercase, symbols, numbers. Example: <code>Ex@m122p$%l6E</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>first_name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="first_name"                data-endpoint="POSTapi-auth-register"
-               value="John"
-               data-component="body">
-    <br>
-<p>The first name of the user. Example: <code>John</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>middle_name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="middle_name"                data-endpoint="POSTapi-auth-register"
-               value="Bison"
-               data-component="body">
-    <br>
-<p>The middle name of the user. Example: <code>Bison</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>last_name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="last_name"                data-endpoint="POSTapi-auth-register"
-               value="Doe"
-               data-component="body">
-    <br>
-<p>The last name of the user. Example: <code>Doe</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>unit_number</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="unit_number"                data-endpoint="POSTapi-auth-register"
-               value="NG08012345678"
-               data-component="body">
-    <br>
-<p>The unit number of the user. Example: <code>NG08012345678</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
@@ -3641,17 +5727,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Must match <small class="badge badge-blue">password</small> Field. Example: <code>Ex@m122p$%l6E</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="type"                data-endpoint="POSTapi-auth-register"
-               value="individual"
-               data-component="body">
-    <br>
-<p>The type of user must either be individual or business. Example: <code>individual</code></p>
         </div>
         </form>
 

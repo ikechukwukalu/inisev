@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "fbf3d520-7f7a-4d30-816e-552bc0d91f72",
+        "_postman_id": "b61753fb-c113-4e61-8085-546d56f3d67c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -695,6 +695,507 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "name": "UserSub APIs",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "Create UserSub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/sub\/create",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/sub\/create"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"user_id\":\"1\",\"website_id\":\"1\",\"active\":1}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete UserSub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/sub\/delete",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/sub\/delete"
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"id\":\"1\"}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Read UserSub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/sub\/read\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/sub\/read\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "all",
+                                            "description": "The ID of the record."
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Fetch a record or records from the UserSubs table.\nThe <b>id<\/b> param is optional but can either be a <b>string|null|int<\/b>\n\nIf the <b>id<\/b> has a <b>null<\/b> value the records will be paginated.\nThe returned page size is be set from <b>api.paginate.user_address.pageSize<\/b>\nconfig.\n\nIf the <b>id<\/b> is a <b>string<\/b> value it can only be set as <b>'all'<\/b>.\nThis will return all the records without being paginated.\n\nIf the <b>id<\/b> value is an <b>integer<\/b> it will try to fetch a single\nmatching record."
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update UserSub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/sub\/update",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/sub\/update"
+                                },
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"id\":\"1\",\"active\":\"1\",\"name\":\"John\"}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Website APIs",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "Create Website.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/website\/create",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/website\/create"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"name\":\"ESPN Fake\",\"url\":\"https:\\\/\\\/espnfake.com\",\"active\":1}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete Website.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/website\/delete",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/website\/delete"
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"id\":\"1\"}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Read Website.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/website\/read\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/website\/read\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "all",
+                                            "description": "The ID of the record."
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Fetch a record or records from the Websites table.\nThe <b>id<\/b> param is optional but can either be a <b>string|null|int<\/b>\n\nIf the <b>id<\/b> has a <b>null<\/b> value the records will be paginated.\nThe returned page size is be set from <b>api.paginate.user_address.pageSize<\/b>\nconfig.\n\nIf the <b>id<\/b> is a <b>string<\/b> value it can only be set as <b>'all'<\/b>.\nThis will return all the records without being paginated.\n\nIf the <b>id<\/b> value is an <b>integer<\/b> it will try to fetch a single\nmatching record."
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update Website.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/website\/update",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/website\/update"
+                                },
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"id\":\"1\",\"name\":\"CNN Fake\",\"url\":\"https:\\\/\\\/cnnfake.com\",\"active\":1}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "UserPub APIs",
+                    "description": "",
+                    "item": [
+                        {
+                            "name": "Create UserPub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/pub\/create",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/pub\/create"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"user_id\":\"1\",\"website_id\":\"1\",\"title\":\"New Post\",\"description\":\"This is a lovely post!\",\"active\":1}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete UserPub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/pub\/delete",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/pub\/delete"
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"id\":\"1\"}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Read UserPub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/pub\/read\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/pub\/read\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "all",
+                                            "description": "The ID of the record."
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "Fetch a record or records from the UserPubs table.\nThe <b>id<\/b> param is optional but can either be a <b>string|null|int<\/b>\n\nIf the <b>id<\/b> has a <b>null<\/b> value the records will be paginated.\nThe returned page size is be set from <b>api.paginate.user_address.pageSize<\/b>\nconfig.\n\nIf the <b>id<\/b> is a <b>string<\/b> value it can only be set as <b>'all'<\/b>.\nThis will return all the records without being paginated.\n\nIf the <b>id<\/b> value is an <b>integer<\/b> it will try to fetch a single\nmatching record."
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update UserPub.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user\/user\/pub\/update",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/user\/user\/pub\/update"
+                                },
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer {Your key}"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"id\":\"1\",\"title\":\"New Post\",\"description\":\"This is a lovely post!\",\"active\":1}"
+                                },
+                                "description": ""
+                            },
+                            "response": [
+                                {
+                                    "header": [],
+                                    "code": 200,
+                                    "body": "{\n\"success\": true,\n\"status_code\": 200,\n\"message\": string\n\"data\": {}\n}",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -724,7 +1225,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"current_pin\":\"quod\",\"pin\":\"qstz\"}"
+                            "raw": "{\"current_pin\":\"omnis\",\"pin\":\"g\"}"
                         },
                         "description": "",
                         "auth": {
@@ -745,7 +1246,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "989c448f-1434-31b6-8417-107e3589f3b3",
+                                    "value": "c105e491-55d4-3cea-8956-f333baab9ccd",
                                     "description": ""
                                 }
                             ]
@@ -843,7 +1344,27 @@
                             "type": "noauth"
                         }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"success\":false,\"status_code\":401,\"message\":\"auth.unauthenticated\",\"data\":[]}",
+                            "name": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -873,7 +1394,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Bison Doe\",\"email\":\"johndoe@xyz.com\",\"phone\":\"08012345678\",\"password\":\"Ex@m122p$%l6E\",\"first_name\":\"John\",\"middle_name\":\"Bison\",\"last_name\":\"Doe\",\"unit_number\":\"NG08012345678\",\"password_confirmation\":\"Ex@m122p$%l6E\",\"type\":\"individual\"}"
+                            "raw": "{\"name\":\"John Bison Doe\",\"email\":\"johndoe@xyz.com\",\"phone\":\"08012345678\",\"password\":\"Ex@m122p$%l6E\",\"password_confirmation\":\"Ex@m122p$%l6E\"}"
                         },
                         "description": "Within the config file, you are required to determine whether a\nuser should recieve welcome and verification emails after\nregistration by setting <b>registration.notify.welcome<\/b> to <b>TRUE<\/b> and\n<b>registration.notify.verify<\/b> to <b>TRUE<\/b> respectively.\nYou can also set <b>registration.autologin<\/b> to <b>TRUE<\/b>.",
                         "auth": {
