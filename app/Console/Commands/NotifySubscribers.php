@@ -2,8 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\EmailSubscribers;
+use App\Facades\Website;
+use App\Jobs\GetWebsitePublications;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Redis;
 
 class NotifySubscribers extends Command
 {
@@ -27,6 +30,12 @@ class NotifySubscribers extends Command
     public function handle()
     {
         //
-        EmailSubscribers::dispatch();
+        Redis::subscribe('new:website:post', function($post) {
+            Website::queryBuilder()->chunk(1000, function(EloquentCollection $websites) {
+                foreach ($websites as $website) {
+                    GetWebsitePublications::dispatch($website);
+                }
+            });
+        });
     }
 }

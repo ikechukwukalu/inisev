@@ -68,7 +68,7 @@ interface UserSubRepositoryInterface
     public function getPaginated(int $pageSize): LengthAwarePaginator;
 
     /**
-     * Get by website ID
+     * Get builder
      *
      * @param integer $websiteId
      * @return Builder

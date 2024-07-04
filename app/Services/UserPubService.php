@@ -40,7 +40,7 @@ class UserPubService extends BasicCrudService
             return $response;
         }
 
-        Redis::publish($website->name, json_encode([
+        Redis::publish('new:website:post', json_encode([
             'title' => $response->data->title,
             'description' => $response->data->description,
         ]));

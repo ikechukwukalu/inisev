@@ -10,8 +10,6 @@ use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Redis;
-
 class GetWebsitePublications implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -31,9 +29,12 @@ class GetWebsitePublications implements ShouldQueue
     {
         UserPub::getNewPublications($this->website->id)->chunk(1000, function(EloquentCollection $userPubs) {
             foreach ($userPubs as $userPub) {
-                Redis::subscribe($this->website->name, function($post) use($userPub) {
-                    EmailWebsiteSubscribers::dispatch($this->website, $userPub, (object) json_decode($post));
-                });
+                $post = [
+                    'title' => $this->website->id,
+                    'description' => $this->website->description
+                ];
+
+                EmailWebsiteSubscribers::dispatch($this->website, $userPub, (object) $post);
 
                 UserPub::update($userPub->id, ['published' => '1']);
             }
