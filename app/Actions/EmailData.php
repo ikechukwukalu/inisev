@@ -15,6 +15,7 @@ class EmailData
      * @param null|string $action_url
      * @param null|string $replyTo
      */
+
     public function __construct(public string $subject,
         public array $lines,
         public string $from = "no-reply@africanies.com",
