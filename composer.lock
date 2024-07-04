@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8abc0f66e341271a9b8200c58fcbdfc8",
+    "content-hash": "5d2571b0e86410d532c7602a3b9ec172",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -258,6 +258,89 @@
             "time": "2023-11-30T22:41:32+00:00"
         },
         {
+            "name": "beyondcode/laravel-websockets",
+            "version": "1.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beyondcode/laravel-websockets.git",
+                "reference": "fee9a81e42a096d2aaca216ce91acf6e25d8c06d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beyondcode/laravel-websockets/zipball/fee9a81e42a096d2aaca216ce91acf6e25d8c06d",
+                "reference": "fee9a81e42a096d2aaca216ce91acf6e25d8c06d",
+                "shasum": ""
+            },
+            "require": {
+                "cboden/ratchet": "^0.4.1",
+                "ext-json": "*",
+                "facade/ignition-contracts": "^1.0",
+                "guzzlehttp/psr7": "^1.7|^2.0",
+                "illuminate/broadcasting": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/http": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/routing": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.2|^8.0",
+                "pusher/pusher-php-server": "^3.0|^4.0|^5.0|^6.0|^7.0",
+                "react/dns": "^1.1",
+                "react/http": "^1.1",
+                "symfony/http-kernel": "^4.0|^5.0|^6.0",
+                "symfony/psr-http-message-bridge": "^1.1|^2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.3",
+                "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0|^8.0",
+                "phpunit/phpunit": "^8.0|^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BeyondCode\\LaravelWebSockets\\WebSocketsServiceProvider"
+                    ],
+                    "aliases": {
+                        "WebSocketRouter": "BeyondCode\\LaravelWebSockets\\Facades\\WebSocketRouter"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BeyondCode\\LaravelWebSockets\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "marcel@beyondco.de",
+                    "homepage": "https://beyondcode.de",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An easy to use WebSocket server",
+            "homepage": "https://github.com/beyondcode/laravel-websockets",
+            "keywords": [
+                "beyondcode",
+                "laravel-websockets"
+            ],
+            "support": {
+                "issues": "https://github.com/beyondcode/laravel-websockets/issues",
+                "source": "https://github.com/beyondcode/laravel-websockets/tree/1.14.1"
+            },
+            "abandoned": true,
+            "time": "2023-08-30T07:23:12+00:00"
+        },
+        {
             "name": "brick/math",
             "version": "0.12.1",
             "source": {
@@ -439,6 +522,69 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "cboden/ratchet",
+            "version": "v0.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ratchetphp/Ratchet.git",
+                "reference": "5012dc954541b40c5599d286fd40653f5716a38f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ratchetphp/Ratchet/zipball/5012dc954541b40c5599d286fd40653f5716a38f",
+                "reference": "5012dc954541b40c5599d286fd40653f5716a38f",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/psr7": "^1.7|^2.0",
+                "php": ">=5.4.2",
+                "ratchet/rfc6455": "^0.3.1",
+                "react/event-loop": ">=0.4",
+                "react/socket": "^1.0 || ^0.8 || ^0.7 || ^0.6 || ^0.5",
+                "symfony/http-foundation": "^2.6|^3.0|^4.0|^5.0|^6.0",
+                "symfony/routing": "^2.6|^3.0|^4.0|^5.0|^6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ratchet\\": "src/Ratchet"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Matt Bonneau",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP WebSocket library",
+            "homepage": "http://socketo.me",
+            "keywords": [
+                "Ratchet",
+                "WebSockets",
+                "server",
+                "sockets",
+                "websocket"
+            ],
+            "support": {
+                "chat": "https://gitter.im/reactphp/reactphp",
+                "issues": "https://github.com/ratchetphp/Ratchet/issues",
+                "source": "https://github.com/ratchetphp/Ratchet/tree/v0.4.4"
+            },
+            "time": "2021-12-14T00:20:41+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -1377,6 +1523,59 @@
                 "source": "https://github.com/igorw/evenement/tree/v3.0.2"
             },
             "time": "2023-08-08T05:53:35+00:00"
+        },
+        {
+            "name": "facade/ignition-contracts",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facade/ignition-contracts.git",
+                "reference": "3c921a1cdba35b68a7f0ccffc6dffc1995b18267"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facade/ignition-contracts/zipball/3c921a1cdba35b68a7f0ccffc6dffc1995b18267",
+                "reference": "3c921a1cdba35b68a7f0ccffc6dffc1995b18267",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^v2.15.8",
+                "phpunit/phpunit": "^9.3.11",
+                "vimeo/psalm": "^3.17.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facade\\IgnitionContracts\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://flareapp.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Solution contracts for Ignition",
+            "homepage": "https://github.com/facade/ignition-contracts",
+            "keywords": [
+                "contracts",
+                "flare",
+                "ignition"
+            ],
+            "support": {
+                "issues": "https://github.com/facade/ignition-contracts/issues",
+                "source": "https://github.com/facade/ignition-contracts/tree/1.0.2"
+            },
+            "time": "2020-10-16T08:27:54+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -2704,30 +2903,32 @@
         },
         {
             "name": "hisorange/browser-detect",
-            "version": "5.0.3",
+            "version": "4.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hisorange/browser-detect.git",
-                "reference": "6460325a81460d912131c0b943a00e76f8847cdb"
+                "reference": "2a7c2b140209aa8477424614eb3aa6f7a7b9f429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hisorange/browser-detect/zipball/6460325a81460d912131c0b943a00e76f8847cdb",
-                "reference": "6460325a81460d912131c0b943a00e76f8847cdb",
+                "url": "https://api.github.com/repos/hisorange/browser-detect/zipball/2a7c2b140209aa8477424614eb3aa6f7a7b9f429",
+                "reference": "2a7c2b140209aa8477424614eb3aa6f7a7b9f429",
                 "shasum": ""
             },
             "require": {
                 "jaybizzle/crawler-detect": "~1.2",
                 "league/pipeline": "^1.0",
-                "matomo/device-detector": "^6.0",
-                "mobiledetect/mobiledetectlib": "~4.0",
-                "php": "^8.1",
+                "matomo/device-detector": "^4.0 || ^5.0 || ^6.0",
+                "mobiledetect/mobiledetectlib": "~2.8",
+                "php": "^7.2 || ^8.0",
                 "ua-parser/uap-php": "~3.9"
             },
             "require-dev": {
-                "orchestra/testbench": "~7.0 || ~8.0",
-                "php-coveralls/php-coveralls": "~2.0",
-                "phpunit/phpunit": "~9.0 || ~10.0"
+                "orchestra/testbench": "~4.0 || ~5.0 || ~6.0 || ~7.0",
+                "php-coveralls/php-coveralls": "~1.0 || ~2.0",
+                "phpstan/phpstan": "^0.12.11",
+                "phpunit/phpunit": "~5.0 || ~6.0 || ~7.0 || ~8.0 || ~9.0",
+                "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
             "extra": {
@@ -2751,7 +2952,7 @@
             ],
             "authors": [
                 {
-                    "name": "Varga Zsolt",
+                    "name": "Varga Zsolt (hisorange)",
                     "email": "hello@hisorange.me"
                 }
             ],
@@ -2764,46 +2965,48 @@
                 "hisorange",
                 "laravel",
                 "mobile",
+                "php",
                 "tablet",
                 "user agent",
                 "user-agent"
             ],
             "support": {
                 "issues": "https://github.com/hisorange/browser-detect/issues",
-                "source": "https://github.com/hisorange/browser-detect/tree/5.0.3"
+                "source": "https://github.com/hisorange/browser-detect/tree/4.5.4"
             },
-            "time": "2024-02-05T08:21:06+00:00"
+            "time": "2022-11-10T01:43:55+00:00"
         },
         {
             "name": "ikechukwukalu/clamavfileupload",
-            "version": "v3.0.1",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ikechukwukalu/clamavfileupload.git",
-                "reference": "f22f40d1ef6ebc14267eb6a555e5dffb2f5dda24"
+                "reference": "e556e5e3acb44af1b5b41fa6e82a23a76f5975c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ikechukwukalu/clamavfileupload/zipball/f22f40d1ef6ebc14267eb6a555e5dffb2f5dda24",
-                "reference": "f22f40d1ef6ebc14267eb6a555e5dffb2f5dda24",
+                "url": "https://api.github.com/repos/ikechukwukalu/clamavfileupload/zipball/e556e5e3acb44af1b5b41fa6e82a23a76f5975c5",
+                "reference": "e556e5e3acb44af1b5b41fa6e82a23a76f5975c5",
                 "shasum": ""
             },
             "require": {
-                "illuminate/broadcasting": "^9.0|^10.0|^11.0",
-                "illuminate/contracts": "^9.0|^10.0|^11.0",
-                "illuminate/database": "^9.0|^10.0|^11.0",
-                "illuminate/events": "^9.0|^10.0|^11.0",
-                "illuminate/http": "^9.0|^10.0|^11.0",
-                "illuminate/queue": "^9.0|^10.0|^11.0",
-                "illuminate/support": "^9.0|^10.0|^11.0",
+                "doctrine/dbal": "^3.6",
+                "illuminate/broadcasting": "^9.0|^10.0",
+                "illuminate/contracts": "^9.0|^10.0",
+                "illuminate/database": "^9.0|^10.0",
+                "illuminate/events": "^9.0|^10.0",
+                "illuminate/http": "^9.0|^10.0",
+                "illuminate/queue": "^9.0|^10.0",
+                "illuminate/support": "^9.0|^10.0",
                 "php": ">=8.0",
-                "symfony/http-foundation": "^5.4|^6.0|^7.0"
+                "symfony/http-foundation": "^6.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.0|^2.0",
-                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "mockery/mockery": "^1.4.4",
+                "orchestra/testbench": "8.5.5",
                 "php-parallel-lint/php-parallel-lint": "dev-develop",
-                "phpunit/phpunit": "^9.0|^10.0|^11.0"
+                "phpunit/phpunit": "^9.0|^10.0"
             },
             "type": "library",
             "extra": {
@@ -2843,38 +3046,40 @@
             "description": "File upload with ClamAV anti-virus scan",
             "support": {
                 "issues": "https://github.com/ikechukwukalu/clamavfileupload/issues",
-                "source": "https://github.com/ikechukwukalu/clamavfileupload/tree/v3.0.1"
+                "source": "https://github.com/ikechukwukalu/clamavfileupload/tree/v2.0.6"
             },
-            "time": "2024-06-18T08:17:51+00:00"
+            "time": "2024-03-22T23:58:32+00:00"
         },
         {
             "name": "ikechukwukalu/magicmake",
-            "version": "v2.0.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ikechukwukalu/magicmake.git",
-                "reference": "2caf539a259144e7564fdf40f0026a98a34694af"
+                "reference": "2890e84fb2954c37c1e016d7d3150290eaa3bddd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ikechukwukalu/magicmake/zipball/2caf539a259144e7564fdf40f0026a98a34694af",
-                "reference": "2caf539a259144e7564fdf40f0026a98a34694af",
+                "url": "https://api.github.com/repos/ikechukwukalu/magicmake/zipball/2890e84fb2954c37c1e016d7d3150290eaa3bddd",
+                "reference": "2890e84fb2954c37c1e016d7d3150290eaa3bddd",
                 "shasum": ""
             },
             "require": {
+                "beyondcode/laravel-websockets": "^1.14",
                 "calebporzio/sushi": "^2.4",
-                "hisorange/browser-detect": "^4.5|^5.0",
-                "ikechukwukalu/clamavfileupload": "^2.0|^3.0",
-                "ikechukwukalu/makeservice": "^1.0|^2.0",
-                "ikechukwukalu/requirepin": "^1.0|^2.0",
-                "illuminate/console": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "doctrine/dbal": "^3.5",
+                "hisorange/browser-detect": "^4.5",
+                "ikechukwukalu/clamavfileupload": "^2.0",
+                "ikechukwukalu/makeservice": "^1.0",
+                "ikechukwukalu/requirepin": "^1.0",
+                "illuminate/console": "^8.0|^9.0|^10.0",
+                "illuminate/support": "^8.0|^9.0|^10.0",
                 "knuckleswtf/scribe": "^4.29",
                 "kreait/laravel-firebase": "^5.6",
-                "laragear/two-factor": "^1.2|^2.0",
+                "laragear/two-factor": "^1.2",
                 "laravel/socialite": "^5.5",
                 "laravel/ui": "^4.4",
-                "mobiledetect/mobiledetectlib": "^2.8.32|^4.8",
+                "mobiledetect/mobiledetectlib": "2.8.32",
                 "php": ">=7.3",
                 "predis/predis": "^2.1",
                 "pusher/pusher-php-server": "^7.2",
@@ -2882,15 +3087,14 @@
                 "sentry/sentry-laravel": "^4.1",
                 "spatie/laravel-activitylog": "^4.7",
                 "spatie/laravel-permission": "^6.3",
-                "stevebauman/location": "^6.6|^7.0",
-                "symfony/console": "^5.4|^6.0|^7.0",
-                "symfony/finder": "^6.0|^7.0"
+                "stevebauman/location": "^6.6",
+                "symfony/console": "^5.4|^6.0",
+                "symfony/finder": "^6.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.0|^2.0",
-                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0",
                 "php-parallel-lint/php-parallel-lint": "dev-develop",
-                "phpunit/phpunit": "^9.0|^10.0|^11.0"
+                "phpunit/phpunit": "^9.0|^10.0"
             },
             "type": "library",
             "extra": {
@@ -2918,34 +3122,34 @@
             "description": "A scaffolding package for an opinionated Laravel coding style.",
             "support": {
                 "issues": "https://github.com/ikechukwukalu/magicmake/issues",
-                "source": "https://github.com/ikechukwukalu/magicmake/tree/v2.0.0"
+                "source": "https://github.com/ikechukwukalu/magicmake/tree/v1.0.0"
             },
-            "time": "2024-06-18T16:23:53+00:00"
+            "time": "2024-02-26T21:43:50+00:00"
         },
         {
             "name": "ikechukwukalu/makeservice",
-            "version": "v2.0.1",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ikechukwukalu/makeservice.git",
-                "reference": "b6a81fe9fa9caf524690b98fa0c95f6455beb8b9"
+                "reference": "0830c27bd757a890a7bf70999d5e014dac0bee16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ikechukwukalu/makeservice/zipball/b6a81fe9fa9caf524690b98fa0c95f6455beb8b9",
-                "reference": "b6a81fe9fa9caf524690b98fa0c95f6455beb8b9",
+                "url": "https://api.github.com/repos/ikechukwukalu/makeservice/zipball/0830c27bd757a890a7bf70999d5e014dac0bee16",
+                "reference": "0830c27bd757a890a7bf70999d5e014dac0bee16",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/console": "^8.0|^9.0|^10.0",
+                "illuminate/support": "^8.0|^9.0|^10.0",
                 "php": ">=7.3",
-                "symfony/console": "^5.4|^6.0|^7.0"
+                "symfony/console": "^5.4|^6.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0",
                 "php-parallel-lint/php-parallel-lint": "dev-develop",
-                "phpunit/phpunit": "^9.0|^10.0|^11.0"
+                "phpunit/phpunit": "^9.0|^10.0"
             },
             "type": "library",
             "extra": {
@@ -2974,51 +3178,51 @@
             "description": "A laravel package for scaffolding service classes.",
             "support": {
                 "issues": "https://github.com/ikechukwukalu/makeservice/issues",
-                "source": "https://github.com/ikechukwukalu/makeservice/tree/v2.0.1"
+                "source": "https://github.com/ikechukwukalu/makeservice/tree/v1.0.7"
             },
-            "time": "2024-06-18T06:57:38+00:00"
+            "time": "2023-11-22T08:05:30+00:00"
         },
         {
             "name": "ikechukwukalu/requirepin",
-            "version": "v2.0.2",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ikechukwukalu/requirepin.git",
-                "reference": "4d7e690f03d0b4374ec057b1c3f5762d671a9bbd"
+                "reference": "ba8c9ef615aaa6cc24d8cd7814a65a2085b74868"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ikechukwukalu/requirepin/zipball/4d7e690f03d0b4374ec057b1c3f5762d671a9bbd",
-                "reference": "4d7e690f03d0b4374ec057b1c3f5762d671a9bbd",
+                "url": "https://api.github.com/repos/ikechukwukalu/requirepin/zipball/ba8c9ef615aaa6cc24d8cd7814a65a2085b74868",
+                "reference": "ba8c9ef615aaa6cc24d8cd7814a65a2085b74868",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "^3.1|^4.0",
-                "illuminate/auth": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/broadcasting": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/bus": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/events": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/notifications": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/queue": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/routing": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/validation": "^8.0|^9.0|^10.0|^11.0",
-                "illuminate/view": "^8.0|^9.0|^10.0|^11.0",
-                "laravel/sanctum": "^2.8|^3.2|^4.0",
-                "laravel/ui": "^3.1|^4.4",
+                "doctrine/dbal": "^3.1",
+                "illuminate/auth": "^8.0|^9.0|^10.0",
+                "illuminate/broadcasting": "^8.0|^9.0|^10.0",
+                "illuminate/bus": "^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^8.0|^9.0|^10.0",
+                "illuminate/database": "^8.0|^9.0|^10.0",
+                "illuminate/events": "^8.0|^9.0|^10.0",
+                "illuminate/http": "^8.0|^9.0|^10.0",
+                "illuminate/notifications": "^8.0|^9.0|^10.0",
+                "illuminate/queue": "^8.0|^9.0|^10.0",
+                "illuminate/routing": "^8.0|^9.0|^10.0",
+                "illuminate/support": "^8.0|^9.0|^10.0",
+                "illuminate/validation": "^8.0|^9.0|^10.0",
+                "illuminate/view": "^8.0|^9.0|^10.0",
+                "laravel/sanctum": "^2.8|^3.2",
+                "laravel/ui": "^3.1|^4.2",
                 "php": ">=7.3",
                 "predis/predis": "^2.0",
-                "stevebauman/location": "^6.6|^7.0",
-                "symfony/http-foundation": "^5.4|^6.0|^7.0"
+                "stevebauman/location": "^6.6",
+                "symfony/http-foundation": "^5.4|^6.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.0|^2.0",
-                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0",
                 "php-parallel-lint/php-parallel-lint": "dev-develop",
-                "phpunit/phpunit": "^9.0|^10.0|^11.0"
+                "phpunit/phpunit": "^9.0|^10.0"
             },
             "type": "library",
             "extra": {
@@ -3055,9 +3259,9 @@
             "description": "A laravel package for pin confirmation and validation before processing requests to a specified route",
             "support": {
                 "issues": "https://github.com/ikechukwukalu/requirepin/issues",
-                "source": "https://github.com/ikechukwukalu/requirepin/tree/v2.0.2"
+                "source": "https://github.com/ikechukwukalu/requirepin/tree/v1.0.6"
             },
-            "time": "2024-06-18T11:11:17+00:00"
+            "time": "2023-11-21T21:04:02+00:00"
         },
         {
             "name": "jaybizzle/crawler-detect",
@@ -3514,25 +3718,25 @@
         },
         {
             "name": "laragear/meta",
-            "version": "v3.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laragear/Meta.git",
-                "reference": "06d8cb97f7bdf676280bfcb5bd77e28adb43ec73"
+                "reference": "13dee15a40f4b9273ef27db76cb95c306ebd8741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laragear/Meta/zipball/06d8cb97f7bdf676280bfcb5bd77e28adb43ec73",
-                "reference": "06d8cb97f7bdf676280bfcb5bd77e28adb43ec73",
+                "url": "https://api.github.com/repos/Laragear/Meta/zipball/13dee15a40f4b9273ef27db76cb95c306ebd8741",
+                "reference": "13dee15a40f4b9273ef27db76cb95c306ebd8741",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "8.*"
             },
             "require-dev": {
-                "laragear/meta-testing": "2.*",
-                "laravel/breeze": "1.*|2.*",
-                "orchestra/testbench": "8.*|9.*"
+                "laragear/meta-testing": "^1.3.0",
+                "laravel/breeze": "1.*",
+                "orchestra/testbench": "^7.22|8.*"
             },
             "type": "library",
             "autoload": {
@@ -3570,102 +3774,38 @@
                     "type": "Paypal"
                 }
             ],
-            "time": "2024-03-04T02:09:06+00:00"
-        },
-        {
-            "name": "laragear/meta-model",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Laragear/MetaModel.git",
-                "reference": "86aa8bbd0e1b9d03467a0257f0cd5815b6836a34"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Laragear/MetaModel/zipball/86aa8bbd0e1b9d03467a0257f0cd5815b6836a34",
-                "reference": "86aa8bbd0e1b9d03467a0257f0cd5815b6836a34",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "10.*|11.*",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.6",
-                "phpunit/phpunit": "^10.5|11.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Laragear\\MetaModel\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Italo Israel Baeza Cabrera",
-                    "email": "DarkGhostHunter@Gmail.com",
-                    "homepage": "https://github.com/sponsors/DarkGhostHunter",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Let other developers customize your package model and migrations",
-            "keywords": [
-                "database",
-                "eloquent",
-                "laravel",
-                "model"
-            ],
-            "support": {
-                "issues": "https://github.com/Laragear/MetaModel/issues",
-                "source": "https://github.com/Laragear/MetaModel"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/DarkGhostHunter",
-                    "type": "Github Sponsorship"
-                },
-                {
-                    "url": "https://paypal.me/darkghosthunter",
-                    "type": "Paypal"
-                }
-            ],
-            "time": "2024-03-15T23:27:56+00:00"
+            "time": "2023-02-26T22:37:22+00:00"
         },
         {
             "name": "laragear/two-factor",
-            "version": "v2.0.1",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laragear/TwoFactor.git",
-                "reference": "10b658e0b9cc71808cb32a3279a64c15599397f5"
+                "reference": "a45c3d3b497572dcb449e5c3552c9b6220dbc1b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laragear/TwoFactor/zipball/10b658e0b9cc71808cb32a3279a64c15599397f5",
-                "reference": "10b658e0b9cc71808cb32a3279a64c15599397f5",
+                "url": "https://api.github.com/repos/Laragear/TwoFactor/zipball/a45c3d3b497572dcb449e5c3552c9b6220dbc1b1",
+                "reference": "a45c3d3b497572dcb449e5c3552c9b6220dbc1b1",
                 "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "2.*",
                 "ext-json": "*",
-                "illuminate/auth": "10.*|11.*",
-                "illuminate/config": "10.*|11.*",
-                "illuminate/database": "10.*|11.*",
-                "illuminate/http": "10.*|11.*",
-                "illuminate/support": "10.*|11.*",
-                "illuminate/validation": "10.*|11.*",
-                "laragear/meta": "3.*",
-                "laragear/meta-model": "^1.1",
-                "paragonie/constant_time_encoding": "^2.6",
-                "php": "^8.1"
+                "illuminate/auth": "9.*|10.*",
+                "illuminate/config": "9.*|10.*",
+                "illuminate/database": "9.*|10.*",
+                "illuminate/http": "9.*|10.*",
+                "illuminate/support": "9.*|10.*",
+                "illuminate/validation": "9.*|10.*",
+                "laragear/meta": "^2.1.0",
+                "paragonie/constant_time_encoding": "^2.5",
+                "php": "8.*"
             },
             "require-dev": {
-                "laragear/meta-testing": "2.*",
-                "orchestra/testbench": "8.*|9.*"
+                "laragear/meta-testing": "^1.3.1",
+                "orchestra/testbench": "^7.22|8.*"
             },
             "type": "library",
             "extra": {
@@ -3705,15 +3845,23 @@
             },
             "funding": [
                 {
-                    "url": "https://github.com/sponsors/DarkGhostHunter",
-                    "type": "Github Sponsorship"
+                    "url": "https://www.buymeacoffee.com/darkghosthunter",
+                    "type": "Buy me a cofee"
+                },
+                {
+                    "url": "https://ko-fi.com/DarkGhostHunter",
+                    "type": "Ko-Fi"
+                },
+                {
+                    "url": "https://patreon.com/PackagesForLaravel",
+                    "type": "Patreon"
                 },
                 {
                     "url": "https://paypal.me/darkghosthunter",
                     "type": "Paypal"
                 }
             ],
-            "time": "2024-03-29T05:35:52+00:00"
+            "time": "2024-03-05T06:53:28+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5076,34 +5224,32 @@
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "4.8.06",
+            "version": "2.8.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "af088b54cecc13b3264edca7da93a89ba7aa2d9e"
+                "reference": "ec69a0c381b5fe44547680d3c7db6ced08e5abb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/af088b54cecc13b3264edca7da93a89ba7aa2d9e",
-                "reference": "af088b54cecc13b3264edca7da93a89ba7aa2d9e",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/ec69a0c381b5fe44547680d3c7db6ced08e5abb3",
+                "reference": "ec69a0c381b5fe44547680d3c7db6ced08e5abb3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0",
-                "psr/simple-cache": "^2 || ^3"
+                "php": ">=5.0.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^v3.35.1",
-                "phpbench/phpbench": "^1.2",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^9.6",
-                "squizlabs/php_codesniffer": "^3.7"
+                "phpunit/phpunit": "~4.8.35||~5.7"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Detection\\": "src/"
-                }
+                "psr-0": {
+                    "Detection": "namespaced/"
+                },
+                "classmap": [
+                    "Mobile_Detect.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -5128,15 +5274,9 @@
             ],
             "support": {
                 "issues": "https://github.com/serbanghita/Mobile-Detect/issues",
-                "source": "https://github.com/serbanghita/Mobile-Detect/tree/4.8.06"
+                "source": "https://github.com/serbanghita/Mobile-Detect/tree/devel"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/serbanghita",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-03-01T22:28:42+00:00"
+            "time": "2018-06-03T13:13:04+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7261,6 +7401,63 @@
             "time": "2024-04-27T21:32:50+00:00"
         },
         {
+            "name": "ratchet/rfc6455",
+            "version": "v0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ratchetphp/RFC6455.git",
+                "reference": "7c964514e93456a52a99a20fcfa0de242a43ccdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ratchetphp/RFC6455/zipball/7c964514e93456a52a99a20fcfa0de242a43ccdb",
+                "reference": "7c964514e93456a52a99a20fcfa0de242a43ccdb",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/psr7": "^2 || ^1.7",
+                "php": ">=5.4.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "react/socket": "^1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ratchet\\RFC6455\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Boden",
+                    "email": "cboden@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Matt Bonneau",
+                    "role": "Developer"
+                }
+            ],
+            "description": "RFC6455 WebSocket protocol handler",
+            "homepage": "http://socketo.me",
+            "keywords": [
+                "WebSockets",
+                "rfc6455",
+                "websocket"
+            ],
+            "support": {
+                "chat": "https://gitter.im/reactphp/reactphp",
+                "issues": "https://github.com/ratchetphp/RFC6455/issues",
+                "source": "https://github.com/ratchetphp/RFC6455/tree/v0.3.1"
+            },
+            "time": "2021-12-09T23:20:49+00:00"
+        },
+        {
             "name": "react/cache",
             "version": "v1.2.0",
             "source": {
@@ -8508,30 +8705,29 @@
         },
         {
             "name": "stevebauman/location",
-            "version": "v7.3.2",
+            "version": "v6.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stevebauman/location.git",
-                "reference": "8bb24e761340f1b924ce3db76d7b8ad685f7d2ff"
+                "reference": "49f28e58daa0382bdc571b20f27b3c57c8691f1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stevebauman/location/zipball/8bb24e761340f1b924ce3db76d7b8ad685f7d2ff",
-                "reference": "8bb24e761340f1b924ce3db76d7b8ad685f7d2ff",
+                "url": "https://api.github.com/repos/stevebauman/location/zipball/49f28e58daa0382bdc571b20f27b3c57c8691f1c",
+                "reference": "49f28e58daa0382bdc571b20f27b3c57c8691f1c",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
                 "geoip2/geoip2": "^2.0",
-                "guzzlehttp/guzzle": "^7.0",
-                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
-                "php": ">=8.1"
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": ">=7.3"
             },
             "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
-                "pestphp/pest": "^1.0|^2.0"
+                "mockery/mockery": "~0.9|^1.0",
+                "orchestra/testbench": "~3.2|~4.0|^6.0|^7.0|^8.0",
+                "pestphp/pest": "^1.21"
             },
             "type": "library",
             "extra": {
@@ -8571,9 +8767,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stevebauman/location/issues",
-                "source": "https://github.com/stevebauman/location/tree/v7.3.2"
+                "source": "https://github.com/stevebauman/location/tree/v6.6.2"
             },
-            "time": "2024-06-28T21:16:01+00:00"
+            "time": "2023-02-27T14:26:23+00:00"
         },
         {
             "name": "symfony/cache",
@@ -10465,38 +10661,43 @@
         },
         {
             "name": "symfony/psr-http-message-bridge",
-            "version": "v7.1.1",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/psr-http-message-bridge.git",
-                "reference": "9a5dbb606da711f5d40a7596ad577856f9402140"
+                "reference": "581ca6067eb62640de5ff08ee1ba6850a0ee472e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/psr-http-message-bridge/zipball/9a5dbb606da711f5d40a7596ad577856f9402140",
-                "reference": "9a5dbb606da711f5d40a7596ad577856f9402140",
+                "url": "https://api.github.com/repos/symfony/psr-http-message-bridge/zipball/581ca6067eb62640de5ff08ee1ba6850a0ee472e",
+                "reference": "581ca6067eb62640de5ff08ee1ba6850a0ee472e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2",
-                "psr/http-message": "^1.0|^2.0",
-                "symfony/http-foundation": "^6.4|^7.0"
-            },
-            "conflict": {
-                "php-http/discovery": "<1.15",
-                "symfony/http-kernel": "<6.4"
+                "php": ">=7.2.5",
+                "psr/http-message": "^1.0 || ^2.0",
+                "symfony/deprecation-contracts": "^2.5 || ^3.0",
+                "symfony/http-foundation": "^5.4 || ^6.0"
             },
             "require-dev": {
                 "nyholm/psr7": "^1.1",
-                "php-http/discovery": "^1.15",
-                "psr/log": "^1.1.4|^2|^3",
-                "symfony/browser-kit": "^6.4|^7.0",
-                "symfony/config": "^6.4|^7.0",
-                "symfony/event-dispatcher": "^6.4|^7.0",
-                "symfony/framework-bundle": "^6.4|^7.0",
-                "symfony/http-kernel": "^6.4|^7.0"
+                "psr/log": "^1.1 || ^2 || ^3",
+                "symfony/browser-kit": "^5.4 || ^6.0",
+                "symfony/config": "^5.4 || ^6.0",
+                "symfony/event-dispatcher": "^5.4 || ^6.0",
+                "symfony/framework-bundle": "^5.4 || ^6.0",
+                "symfony/http-kernel": "^5.4 || ^6.0",
+                "symfony/phpunit-bridge": "^6.2"
+            },
+            "suggest": {
+                "nyholm/psr7": "For a super lightweight PSR-7/17 implementation"
             },
             "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.3-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Bridge\\PsrHttpMessage\\": ""
@@ -10516,11 +10717,11 @@
                 },
                 {
                     "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
+                    "homepage": "http://symfony.com/contributors"
                 }
             ],
             "description": "PSR HTTP message bridge",
-            "homepage": "https://symfony.com",
+            "homepage": "http://symfony.com",
             "keywords": [
                 "http",
                 "http-message",
@@ -10528,7 +10729,8 @@
                 "psr-7"
             ],
             "support": {
-                "source": "https://github.com/symfony/psr-http-message-bridge/tree/v7.1.1"
+                "issues": "https://github.com/symfony/psr-http-message-bridge/issues",
+                "source": "https://github.com/symfony/psr-http-message-bridge/tree/v2.3.1"
             },
             "funding": [
                 {
@@ -10544,7 +10746,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:57:53+00:00"
+            "time": "2023-07-26T11:53:26+00:00"
         },
         {
             "name": "symfony/routing",
