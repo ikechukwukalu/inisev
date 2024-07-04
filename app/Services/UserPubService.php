@@ -28,7 +28,7 @@ class UserPubService extends BasicCrudService
     {
         $validated = $request->validated();
 
-        if (!$website = $this->websiteRepository->getById($validated)) {
+        if (!$website = $this->websiteRepository->getById($validated['website_id'])) {
             return responseData(false, Response::HTTP_BAD_REQUEST,
                     'Could not find website');
         }
