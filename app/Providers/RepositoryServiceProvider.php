@@ -10,6 +10,8 @@ use App\Contracts\TwoFactorLoginRepositoryInterface;
 use App\Contracts\UserRepositoryInterface;
 use App\Contracts\UserDeviceTokenRepositoryInterface;
 use App\Contracts\UserPasswordHolderRepositoryInterface;
+use App\Contracts\UserSubRepositoryInterface;
+use App\Contracts\WebsiteRepositoryInterface;
 use App\Repositories\ContactUsRepository;
 use App\Repositories\CustomerRepository;
 use App\Repositories\OldPasswordRepository;
@@ -18,6 +20,8 @@ use App\Repositories\TwoFactorLoginRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\UserDeviceTokenRepository;
 use App\Repositories\UserPasswordHolderRepository;
+use App\Repositories\UserSubRepository;
+use App\Repositories\WebsiteRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -35,6 +39,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(UserDeviceTokenRepositoryInterface::class, UserDeviceTokenRepository::class);
         $this->app->bind(UserPasswordHolderRepositoryInterface::class, UserPasswordHolderRepository::class);
+        $this->app->bind(UserSubRepositoryInterface::class, UserSubRepository::class);
+        $this->app->bind(WebsiteRepositoryInterface::class, WebsiteRepository::class);
     }
 
     /**
