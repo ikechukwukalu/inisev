@@ -67,6 +67,7 @@ php artisan scribe:generate
 
 A broadcast is sent everytime the `api/user/user/pub/create` is called and a new post is added to the `user_pubs` table.
 
+Use the `api/user/user/sub/create` to subscribe a user to a website.
 
 - Login credentials for user
 
