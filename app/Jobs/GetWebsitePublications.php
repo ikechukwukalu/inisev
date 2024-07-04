@@ -30,7 +30,7 @@ class GetWebsitePublications implements ShouldQueue
         UserPub::getNewPublications($this->website->id)->chunk(1000, function(EloquentCollection $userPubs) {
             foreach ($userPubs as $userPub) {
                 $post = [
-                    'title' => $this->website->id,
+                    'title' => $this->website->title,
                     'description' => $this->website->description
                 ];
 

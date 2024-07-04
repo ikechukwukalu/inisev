@@ -8,7 +8,6 @@ use App\Contracts\WebsiteRepositoryInterface;
 use App\Http\Requests\UserPubCreateRequest;
 use App\Http\Requests\UserPubDeleteRequest;
 use App\Http\Requests\UserPubUpdateRequest;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Redis;
 
 class UserPubService extends BasicCrudService
@@ -26,21 +25,14 @@ class UserPubService extends BasicCrudService
      */
     public function handleCreate(UserPubCreateRequest $request): ResponseData
     {
-        $validated = $request->validated();
-
-        if (!$website = $this->websiteRepository->getById($validated['website_id'])) {
-            return responseData(false, Response::HTTP_BAD_REQUEST,
-                    'Could not find website');
-        }
-
         $response = $this->create($request, $this->userPubRepository);
 
         if (!$response->success) {
-            $response->message = 'Could not publish to website';
             return $response;
         }
 
         Redis::publish('new:website:post', json_encode([
+            'id' => $response->data->id,
             'title' => $response->data->title,
             'description' => $response->data->description,
         ]));

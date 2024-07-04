@@ -36,10 +36,10 @@ class EmailWebsiteSubscribers implements ShouldQueue
             foreach ($userSubs as $userSub) {
                 if (!UserSubNotificationFacade::getSubscription($userSub->user_id, $this->userPub->id, $this->website->id))
                 {
-                    $text = "A new post has just been published on a website you're subscribed too";
-                    $actionText = "Go to {$this->website->name}";
+                    $text = trans('email.post_body', ['title' => $this->post->title]);
+                    $actionText = trans('email.action_text', ['name' => $this->website->name]);
                     $actionUrl = $this->website->url;
-                    $remark = 'Best regards';
+                    $remark = trans('email.remark');
 
                     $emailData = new EmailData(subject: "Inisev: {$this->post->title}",
                         lines: [$text],
