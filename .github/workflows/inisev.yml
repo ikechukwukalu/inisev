@@ -1,0 +1,60 @@
+
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  app-tests:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+      mysql:
+        image: mariadb:10.4.27
+        env:
+          MARIADB_ROOT_PASSWORD: ${{ secrets.DB_DEV_PASSWORD }}
+          MARIADB_DATABASE: ${{ secrets.DB_DEV_NAME }}
+        ports:
+          - 3307:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create or copy .env
+        env:
+            DOT_ENV: ${{ secrets.DOT_ENV_DEV }}
+        run: |
+          touch .env
+          echo "$DOT_ENV" | tee .env
+          php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Install NPM Dependencies
+        run: |
+          npm install
+          npm run build
+      - name: Install Composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist  --ignore-platform-reqs
+      - name: Generate key
+        run: php artisan key:generate
+      - name: Execute tests (Unit and Feature tests) using PHPUnit
+        env:
+          DB_CONNECTION: mysql
+          DB_PORT: 3307
+          DB_USER: root
+          DB_PASSWORD: ${{ secrets.DB_DEV_PASSWORD }}
+          DB_DATABASE: ${{ secrets.DB_DEV_NAME }}
+          REDIS_HOST: localhost
+          REDIS_PASSWORD: null
+          REDIS_PORT: 6379
+          REDIS_CLIENT: predis
+        run: |
+          php artisan migrate --seed
+          php artisan test
