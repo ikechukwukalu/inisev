@@ -14,20 +14,20 @@ class WebsiteSeeder extends Seeder
     public function run(): void
     {
         Website::firstOrCreate([
-            'title' => 'ESPN Fake',
+            'name' => 'ESPN Fake',
         ],
         [
-            'title' => 'ESPN Fake',
+            'name' => 'ESPN Fake',
             'url' => 'https://espnfake.com',
             'active' => '1',
             'created_at' => now()
         ]);
 
         Website::firstOrCreate([
-            'title' => 'CNN Fake',
+            'name' => 'CNN Fake',
         ],
         [
-            'title' => 'CNN Fake',
+            'name' => 'CNN Fake',
             'url' => 'https://cnnfake.com',
             'active' => '1',
             'created_at' => now()

@@ -1,9 +1,9 @@
 # Inisev Pub/Sub
 
-<!-- [![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/foodhut/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/foodhut/)
-[![Code Quality](https://img.shields.io/codefactor/grade/github/ikechukwukalu/foodhut?style=flat-square)](https://www.codefactor.io/repository/github/ikechukwukalu/foodhut)
-[![Vulnerability](https://img.shields.io/snyk/vulnerabilities/github/ikechukwukalu/foodhut?style=flat-square)](https://snyk.io/test/github/ikechukwukalu/foodhut)
-[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/foodhut/foodhut.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/foodhut/actions/workflows/foodhut.yml) -->
+<!-- [![Quality Score](https://img.shields.io/scrutinizer/quality/g/ikechukwukalu/inisev/main?style=flat-square)](https://scrutinizer-ci.com/g/ikechukwukalu/inisev/)
+[![Code Quality](https://img.shields.io/codefactor/grade/github/ikechukwukalu/inisev?style=flat-square)](https://www.codefactor.io/repository/github/ikechukwukalu/inisev)
+[![Vulnerability](https://img.shields.io/snyk/vulnerabilities/github/ikechukwukalu/inisev?style=flat-square)](https://snyk.io/test/github/ikechukwukalu/inisev)
+[![Github Workflow Status](https://img.shields.io/github/actions/workflow/status/ikechukwukalu/inisev/inisev.yml?branch=main&style=flat-square)](https://github.com/ikechukwukalu/inisev/actions/workflows/inisev.yml) -->
 
 This is a sample REST API that returns JSON as a response.
 
@@ -45,6 +45,12 @@ php artisan optimize:clear
 php artisan queue:work
 ```
 
+### Run pub/sub
+
+```shell
+php artisan notify:subscribers
+```
+
 ### Run tests
 
 ```shell
@@ -59,21 +65,15 @@ php artisan scribe:generate
 
 ## Note
 
-- Login credentials for customer
+A broadcast is sent everytime the `api/user/user/pub/create` is called and a new post is added to the `user_pubs` table.
+
+
+- Login credentials for user
 
 ``` js
 {
-    "email": testuser@africanies.com
-    "password": $2C00l#@theM0m3nt!
-}
-```
-
-- Login credentials for staff
-
-``` js
-{
-    "email": devops@africanies.com
-    "password": $2C00l#@theM0m3nt!
+    "email": testuser@inisev.com
+    "password": password
 }
 ```
 

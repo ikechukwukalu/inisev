@@ -30,8 +30,8 @@ class GetWebsitePublications implements ShouldQueue
         UserPub::getNewPublications($this->website->id)->chunk(1000, function(EloquentCollection $userPubs) {
             foreach ($userPubs as $userPub) {
                 $post = [
-                    'title' => $this->website->title,
-                    'description' => $this->website->description
+                    'title' => $userPub->title,
+                    'description' => $userPub->description
                 ];
 
                 EmailWebsiteSubscribers::dispatch($this->website, $userPub, (object) $post);

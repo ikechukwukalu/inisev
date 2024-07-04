@@ -28,7 +28,7 @@ endpoints:
         name: current_pin
         description: ''
         required: true
-        example: omnis
+        example: mollitia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,14 +37,14 @@ endpoints:
         name: pin
         description: 'Must not be greater than 4 characters.'
         required: true
-        example: g
+        example: i
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      current_pin: omnis
-      pin: g
+      current_pin: mollitia
+      pin: i
     fileParameters: []
     responses: []
     responseFields: []
@@ -74,13 +74,13 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: c105e491-55d4-3cea-8956-f333baab9ccd
+        example: 41464a9f-2210-32f0-8efa-37e54b785614
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      uuid: c105e491-55d4-3cea-8956-f333baab9ccd
+      uuid: 41464a9f-2210-32f0-8efa-37e54b785614
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

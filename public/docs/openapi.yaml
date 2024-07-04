@@ -927,11 +927,11 @@ paths:
                 current_pin:
                   type: string
                   description: ''
-                  example: omnis
+                  example: mollitia
                 pin:
                   type: string
                   description: 'Must not be greater than 4 characters.'
-                  example: g
+                  example: i
               required:
                 - current_pin
                 - pin
@@ -951,7 +951,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: c105e491-55d4-3cea-8956-f333baab9ccd
+        example: 41464a9f-2210-32f0-8efa-37e54b785614
         required: true
         schema:
           type: string

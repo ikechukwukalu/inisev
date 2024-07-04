@@ -5030,8 +5030,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"current_pin\": \"omnis\",
-    \"pin\": \"g\"
+    \"current_pin\": \"mollitia\",
+    \"pin\": \"i\"
 }"
 </code></pre></div>
 
@@ -5047,8 +5047,8 @@ const headers = {
 };
 
 let body = {
-    "current_pin": "omnis",
-    "pin": "g"
+    "current_pin": "mollitia",
+    "pin": "i"
 };
 
 fetch(url, {
@@ -5137,10 +5137,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="current_pin"                data-endpoint="POSTapi-change-pin"
-               value="omnis"
+               value="mollitia"
                data-component="body">
     <br>
-<p>Example: <code>omnis</code></p>
+<p>Example: <code>mollitia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pin</code></b>&nbsp;&nbsp;
@@ -5148,10 +5148,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="pin"                data-endpoint="POSTapi-change-pin"
-               value="g"
+               value="i"
                data-component="body">
     <br>
-<p>Must not be greater than 4 characters. Example: <code>g</code></p>
+<p>Must not be greater than 4 characters. Example: <code>i</code></p>
         </div>
         </form>
 
@@ -5168,14 +5168,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://127.0.0.1:8000/api/pin/required/c105e491-55d4-3cea-8956-f333baab9ccd" \
+    "http://127.0.0.1:8000/api/pin/required/41464a9f-2210-32f0-8efa-37e54b785614" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/pin/required/c105e491-55d4-3cea-8956-f333baab9ccd"
+    "http://127.0.0.1:8000/api/pin/required/41464a9f-2210-32f0-8efa-37e54b785614"
 );
 
 const headers = {
@@ -5268,10 +5268,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uuid"                data-endpoint="POSTapi-pin-required--uuid-"
-               value="c105e491-55d4-3cea-8956-f333baab9ccd"
+               value="41464a9f-2210-32f0-8efa-37e54b785614"
                data-component="url">
     <br>
-<p>Example: <code>c105e491-55d4-3cea-8956-f333baab9ccd</code></p>
+<p>Example: <code>41464a9f-2210-32f0-8efa-37e54b785614</code></p>
             </div>
                     </form>
 

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "b61753fb-c113-4e61-8085-546d56f3d67c",
+        "_postman_id": "429aeec6-d481-4330-b767-95e86c0585c2",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -1225,7 +1225,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"current_pin\":\"omnis\",\"pin\":\"g\"}"
+                            "raw": "{\"current_pin\":\"mollitia\",\"pin\":\"i\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1246,7 +1246,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "c105e491-55d4-3cea-8956-f333baab9ccd",
+                                    "value": "41464a9f-2210-32f0-8efa-37e54b785614",
                                     "description": ""
                                 }
                             ]
